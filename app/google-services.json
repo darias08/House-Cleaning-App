@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "620072451192",
+    "firebase_url": "https://margarita-house-cleaning-default-rtdb.firebaseio.com",
+    "project_id": "margarita-house-cleaning",
+    "storage_bucket": "margarita-house-cleaning.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620072451192:android:1ad2742169bc90640f818d",
+        "android_client_info": {
+          "package_name": "com.app.margaritahousecleaning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620072451192-cramt4sj22j1hfcjehesf4c81f8uuj1v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWF0-56XbIlFkdYTYp-K31I2onBeTBWHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620072451192-cramt4sj22j1hfcjehesf4c81f8uuj1v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

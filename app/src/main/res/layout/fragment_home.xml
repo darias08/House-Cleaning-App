@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/roundedcorner2"
+        app:itemTextColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/nav_menu"
+        tools:layout_editor_absoluteY="675dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Dark_Grey"
+            tools:context=".HomeActivity2">
+
+
+            <TextView
+                android:id="@+id/OurServices"
+                android:layout_width="205dp"
+                android:layout_height="49dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/our_services"
+                android:textColor="#FFFFFF"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHome2"
+                app:layout_constraintStart_toStartOf="@+id/guidelineHome1"
+                app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="353dp"
+                android:layout_height="104dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="We offer a variety of great services that will help to keep your place clean. The services we provide are; Waxing, Carpet Cleaning, Scrubbing Floors, Office Cleaning, House Cleaning, and Bathroom Cleaning. "
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHome2"
+                app:layout_constraintStart_toStartOf="@+id/guidelineHome1"
+                app:layout_constraintTop_toBottomOf="@+id/OurServices" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="369dp"
+                android:layout_height="93dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="28dp"
+                android:gravity="center"
+                android:text="@string/we_offer_residential_commercial_and_construction_cleaning_services_trust_the_best_for_a_squeaky_clean_environment"
+                android:textColor="#80FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHome2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guidelineHome1"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="168dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/guidelineHome1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logoimage" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="350dp"
+                android:layout_height="156dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/todo2"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHome2"
+                app:layout_constraintStart_toStartOf="@+id/guidelineHome1"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                app:srcCompat="@drawable/image1" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/line_shape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+            <TextView
+                android:id="@+id/WaxingFloor"
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Waxing Floors"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHome2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/guidelineHome1"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="430dp"
+                android:layout_height="245dp"
+                android:layout_marginStart="70dp"
+                android:fillViewport="true"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="@id/guidelineHome2"
+                app:layout_constraintStart_toStartOf="@id/guidelineHome1"
+                app:layout_constraintTop_toBottomOf="@+id/WaxingFloor">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageVieew1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/image_00"
+                        tools:layout_editor_absoluteX="16dp" />
+
+                    <ImageView
+                        android:id="@+id/imageVieew2"
+                        android:layout_width="185dp"
+                        android:layout_height="249dp"
+
+                        app:layout_constraintStart_toEndOf="@id/imageVieew1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/image_101" />
+
+                    <ImageView
+                        android:id="@+id/imageVieew3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/imageVieew2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/image_102" />
+
+                    <ImageView
+                        android:id="@+id/imageVieew4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/imageVieew3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/image_103" />
+
+                    <ImageView
+                        android:id="@+id/imageVieew5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/imageVieew4"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/image_104" />
+
+                    <ImageView
+                        android:id="@+id/imageVieew6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/imageVieew5"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/image_105" />
+
+                    <ImageView
+                        android:id="@+id/imageVieew7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/imageVieew6"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/image_106" />
+
+                    <ImageView
+                        android:id="@+id/imageVieew8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/imageVieew7"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/image_107" />
+
+                    <ImageView
+                        android:id="@+id/imageVieew9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/imageVieew8"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/image_108" />
+
+                    <ImageView
+                        android:id="@+id/imageVieew10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="65dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imageVieew9"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/image_109" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/CarpetCleaning"
+                android:layout_width="130dp"
+                android:layout_height="37dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="282dp"
+                android:gravity="center"
+                android:text="Carpet Cleaning"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/WaxingFloor"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView1"
+                android:layout_width="430dp"
+                android:layout_height="245dp"
+                android:layout_marginStart="70dp"
+                android:fillViewport="true"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CarpetCleaning">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/carpetcleaning3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/carpet_image03" />
+
+                    <ImageView
+                        android:id="@+id/carpetcleaning4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/carpetcleaning3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/carpet_image04" />
+
+                    <ImageView
+                        android:id="@+id/carpetcleaning5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/carpetcleaning4"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/carpet_image05" />
+
+                    <ImageView
+                        android:id="@+id/carpetcleaning6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/carpetcleaning5"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/carpet_image06" />
+
+                    <ImageView
+                        android:id="@+id/carpetcleaning7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/carpetcleaning6"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/carpet_image07" />
+
+                    <ImageView
+                        android:id="@+id/carpetcleaning8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/carpetcleaning7"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/carpet_image08" />
+
+                    <ImageView
+                        android:id="@+id/carpetcleaning9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/carpetcleaning8"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/carpet_image09" />
+
+                    <ImageView
+                        android:id="@+id/carpetcleaning10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="65dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/carpetcleaning9"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/carpet_image10" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ScrubbingFloors"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="282dp"
+                android:gravity="center"
+                android:text="Scrubbing Floors"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/CarpetCleaning"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollView1" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView2"
+                android:layout_width="430dp"
+                android:layout_height="245dp"
+                android:layout_marginStart="70dp"
+                android:fillViewport="true"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ScrubbingFloors">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/scrubbingfloors1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:srcCompat="@drawable/scrubbing01"
+                        tools:layout_editor_absoluteX="16dp" />
+
+                    <ImageView
+                        android:id="@+id/scrubbingfloors2"
+                        android:layout_width="185dp"
+                        android:layout_height="249dp"
+                        android:layout_marginStart="-1dp"
+                        android:layout_marginEnd="37dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@id/scrubbingfloors1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/scrubbing02" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/OfficeCleaning"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="282dp"
+                android:gravity="center"
+                android:text="Office Cleaning"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/ScrubbingFloors"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollView2" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView3"
+                android:layout_width="430dp"
+                android:layout_height="245dp"
+                android:layout_marginStart="70dp"
+                android:fillViewport="true"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/OfficeCleaning">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/officecleaning1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:srcCompat="@drawable/office01"
+                        tools:layout_editor_absoluteX="16dp" />
+
+                    <ImageView
+                        android:id="@+id/officecleaning2"
+                        android:layout_width="185dp"
+                        android:layout_height="249dp"
+
+                        app:layout_constraintStart_toEndOf="@id/officecleaning1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/office02" />
+
+                    <ImageView
+                        android:id="@+id/officecleaning3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/officecleaning2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/office03" />
+
+                    <ImageView
+                        android:id="@+id/officecleaning4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/officecleaning3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/office04" />
+
+                    <ImageView
+                        android:id="@+id/officecleaning5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/officecleaning4"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/office05" />
+
+                    <ImageView
+                        android:id="@+id/officecleaning6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/officecleaning5"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/office06" />
+
+                    <ImageView
+                        android:id="@+id/officecleaning7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/officecleaning6"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/office07" />
+
+                    <ImageView
+                        android:id="@+id/officecleaning8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/officecleaning7"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/office08" />
+
+                    <ImageView
+                        android:id="@+id/officecleaning9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/officecleaning8"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/office09" />
+
+                    <ImageView
+                        android:id="@+id/officecleaning10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="65dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/officecleaning9"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/office10" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/HouseCleaning"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="282dp"
+                android:gravity="center"
+                android:text="House Cleaning"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/OfficeCleaning"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollView3" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView4"
+                android:layout_width="430dp"
+                android:layout_height="245dp"
+                android:layout_marginStart="70dp"
+                android:fillViewport="true"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/HouseCleaning">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/housecleaning1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:srcCompat="@drawable/housecleaning01"
+                        tools:layout_editor_absoluteX="16dp" />
+
+                    <ImageView
+                        android:id="@+id/housecleaning2"
+                        android:layout_width="185dp"
+                        android:layout_height="249dp"
+
+                        app:layout_constraintStart_toEndOf="@id/housecleaning1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/housecleaning02" />
+
+                    <ImageView
+                        android:id="@+id/housecleaning3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/housecleaning2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/housecleaning03" />
+
+                    <ImageView
+                        android:id="@+id/housecleaning4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/housecleaning3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/housecleaning04" />
+
+                    <ImageView
+                        android:id="@+id/housecleaning5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/housecleaning4"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/housecleaning05" />
+
+                    <ImageView
+                        android:id="@+id/housecleaning6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/housecleaning5"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/housecleaning06" />
+
+                    <ImageView
+                        android:id="@+id/housecleaning7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/housecleaning6"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/housecleaning07" />
+
+                    <ImageView
+                        android:id="@+id/housecleaning8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/housecleaning7"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/housecleaning08" />
+
+                    <ImageView
+                        android:id="@+id/housecleaning9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/housecleaning8"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/housecleaning09" />
+
+                    <ImageView
+                        android:id="@+id/housecleaning10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="65dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/housecleaning9"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/housecleaning10" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/BathroomCleaning"
+                android:layout_width="155dp"
+                android:layout_height="34dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="65dp"
+                android:layout_marginEnd="282dp"
+                android:gravity="center"
+                android:text="Bathroom Cleaning"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.439"
+                app:layout_constraintStart_toStartOf="@id/HouseCleaning"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollView4" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView5"
+                android:layout_width="430dp"
+                android:layout_height="245dp"
+                android:layout_marginStart="70dp"
+                android:fillViewport="true"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/BathroomCleaning">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/bathroomcleaning1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:srcCompat="@drawable/bathroom01"
+                        tools:layout_editor_absoluteX="16dp" />
+
+                    <ImageView
+                        android:id="@+id/bathroomcleaning2"
+                        android:layout_width="185dp"
+                        android:layout_height="249dp"
+
+                        app:layout_constraintStart_toEndOf="@id/bathroomcleaning1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bathroom02" />
+
+                    <ImageView
+                        android:id="@+id/bathroomcleaning3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/bathroomcleaning2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bathroom03" />
+
+                    <ImageView
+                        android:id="@+id/bathroomcleaning4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/bathroomcleaning3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bathroom04" />
+
+                    <ImageView
+                        android:id="@+id/bathroomcleaning5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/bathroomcleaning4"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bathroom05" />
+
+                    <ImageView
+                        android:id="@+id/bathroomcleaning6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/bathroomcleaning5"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bathroom06" />
+
+                    <ImageView
+                        android:id="@+id/bathroomcleaning7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/bathroomcleaning6"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bathroom07" />
+
+                    <ImageView
+                        android:id="@+id/bathroomcleaning8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/bathroomcleaning7"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bathroom08" />
+
+                    <ImageView
+                        android:id="@+id/bathroomcleaning9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toEndOf="@id/bathroomcleaning8"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bathroom09" />
+
+                    <ImageView
+                        android:id="@+id/bathroomcleaning10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="65dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/bathroomcleaning9"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bathroom10" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/line_shape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView5" />
+
+            <TextView
+                android:id="@+id/ScheduleAnAppointment"
+                android:layout_width="335dp"
+                android:layout_height="46dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Schedule an appointment"
+                android:textColor="#FFFFFF"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.479"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider7" />
+
+            <TextView
+                android:id="@+id/text_input1"
+                android:layout_width="337dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Click on the button below to schedule an appointment and get your cleaning service as soon as possible!"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ScheduleAnAppointment" />
+
+            <Button
+                android:id="@+id/button_input"
+                android:layout_width="292dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/redStatusBarColor"
+                android:text="Schedule"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.479"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_input1" />
+
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/line_shape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_input" />
+
+            <TextView
+                android:id="@+id/OfficeLocation"
+                android:layout_width="335dp"
+                android:layout_height="46dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Office Location"
+                android:textColor="#FFFFFF"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.479"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+            <TextView
+                android:id="@+id/text_input2"
+                android:layout_width="337dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Click on the button below to see where our office located as well business hours."
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/OfficeLocation" />
+
+            <Button
+                android:id="@+id/button_input2"
+                android:layout_width="292dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/redStatusBarColor"
+                android:text="Location"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.479"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_input2" />
+
+            <View
+                android:id="@+id/divider9"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/line_shape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_input2" />
+
+            <ImageView
+                android:id="@+id/Facebook"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="220dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.704"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider9"
+                app:srcCompat="@drawable/facebook" />
+
+            <ImageView
+                android:id="@+id/Instagram"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="120dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.704"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider9"
+                app:srcCompat="@drawable/instagram" />
+
+            <ImageView
+                android:id="@+id/Twitter"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.704"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider9"
+                app:srcCompat="@drawable/twitter" />
+
+            <TextView
+                android:id="@+id/text_input3"
+                android:layout_width="308dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="35dp"
+                android:gravity="center"
+                android:text="Margarita’s House cleaning Inc and Janitorial service"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Instagram" />
+
+            <TextView
+                android:id="@+id/text_input4"
+                android:layout_width="314dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="1321 N. Tracy Blvd Tracy, CA 95376"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_input3" />
+
+            <TextView
+                android:id="@+id/text_input5"
+                android:layout_width="314dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:text="(408)-892-4523  (Work)"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_input4" />
+
+            <TextView
+                android:id="@+id/text_input6"
+                android:layout_width="314dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:text="(209)814-8362  (Cell)"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_input5" />
+
+            <TextView
+                android:id="@+id/text_input7"
+                android:layout_width="317dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="65dp"
+                android:gravity="center"
+                android:text="Copyright © 2022 Margarita’s House Cleaning Inc and Janitorial Service
+                - All Rights Reserved -  "
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_input6" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="45dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView9"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHome2"
+                app:layout_constraintHorizontal_bias="0.472"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.881"
+                app:srcCompat="@drawable/ic_baseline_notifications_24" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineHome1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineHome2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".95"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

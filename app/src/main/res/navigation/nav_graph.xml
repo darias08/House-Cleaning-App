@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.margaritahousecleaning.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_scheduleFragment"
+            app:destination="@id/scheduleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_locationFragment"
+            app:destination="@id/locationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.app.margaritahousecleaning.ScheduleFragment"
+        android:label="ScheduleFragment"
+        tools:layout="@layout/fragment_schedule">
+        <action
+            android:id="@+id/action_scheduleFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_scheduleFragment_to_locationFragment"
+            app:destination="@id/locationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_scheduleFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_scheduleFragment_to_scheduleTestFragment2"
+            app:destination="@id/scheduleTestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.app.margaritahousecleaning.LocationFragment"
+        android:label="LocationFragment"
+        tools:layout="@layout/fragment_location">
+        <action
+            android:id="@+id/action_locationFragment_to_scheduleFragment"
+            app:destination="@id/scheduleFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_locationFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_locationFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.app.margaritahousecleaning.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_locationFragment"
+            app:destination="@id/locationFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_settingsFragment_to_scheduleFragment"
+            app:destination="@id/scheduleFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_settingsFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleTestFragment"
+        android:name="com.app.margaritahousecleaning.ScheduleFragment1"
+        android:label="fragment_scheduletest"
+        tools:layout="@layout/fragment_schedule1" >
+        <action
+            android:id="@+id/action_scheduleTestFragment_to_scheduleFragment"
+            app:destination="@id/scheduleFragment" />
+        <action
+            android:id="@+id/action_scheduleTestFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_scheduleTestFragment_to_locationFragment2"
+            app:destination="@id/locationFragment" />
+        <action
+            android:id="@+id/action_scheduleTestFragment_to_settingsFragment2"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_scheduleTestFragment_to_scheduleFragment2"
+            app:destination="@id/scheduleFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleFragment2"
+        android:name="com.app.margaritahousecleaning.ScheduleFragment2"
+        android:label="ScheduleFragment2"
+        tools:layout="@layout/fragment_schedule2">
+        <action
+            android:id="@+id/action_scheduleFragment2_to_scheduleTestFragment"
+            app:destination="@id/scheduleTestFragment" />
+        <action
+            android:id="@+id/action_scheduleFragment2_to_scheduleFragment3"
+            app:destination="@id/scheduleFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleFragment3"
+        android:name="com.app.margaritahousecleaning.ScheduleFragment3"
+        android:label="fragment_schedule3"
+        tools:layout="@layout/fragment_schedule3" >
+        <action
+            android:id="@+id/action_scheduleFragment3_to_scheduleFragment2"
+            app:destination="@id/scheduleFragment2" />
+        <action
+            android:id="@+id/action_scheduleFragment3_to_scheduleFragment4"
+            app:destination="@id/scheduleFragment4" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleFragment4"
+        android:name="com.app.margaritahousecleaning.ScheduleFragment4"
+        android:label="ScheduleFragment4"
+        tools:layout="@layout/fragment_schedule4">
+        <action
+            android:id="@+id/action_scheduleFragment4_to_scheduleFragment3"
+            app:destination="@id/scheduleFragment3" />
+    </fragment>
+
+
+</navigation>

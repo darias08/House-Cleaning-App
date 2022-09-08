@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MargaritaHouseCleaning</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="register_ek3_string">Register</string>
+    <string name="full_name_string">Full Name</string>
+    <string name="already_have_an_account__string">Already have an account?</string>
+    <string name="login_string">Login</string>
+    <string name="street_address_string">Street Address</string>
+    <string name="city_state_string">City/State</string>
+    <string name="phone_number_string">Phone Number</string>
+    <string name="email_string">Email</string>
+    <string name="password_string">Password</string>
+    <string name="register_ek4_string">Register</string>
+    <string name="username_string">Username</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="large_text"></string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome_to_margarita_s_house_cleaning_inc_and_janitorial_service">Welcome To Margarita\'s House Cleaning Inc and Janitorial Service!</string>
+    <string name="we_offer_residential_commercial_and_construction_cleaning_services_trust_the_best_for_a_squeaky_clean_environment">We offer residential, commercial and construction cleaning services. Trust the best for a squeaky clean environment!</string>
+    <string name="todo2">TODO2</string>
+    <string name="todo3">TODO3</string>
+    <string name="our_services">Our Services</string>
+    <string name="todo66">TODO</string>
+    <string-array name="radioButtons">
+        <item>10:00 a.m.</item>
+        <item>11:00 a.m.</item>
+        <item>12:00 p.m</item>
+        <item>1:00 p.m.</item>
+        <item>2:00 p.m.</item>
+        <item>3:00 p.m.</item>
+        <item>4:00 p.m.</item>
+        <item>5:00 p.m.</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
