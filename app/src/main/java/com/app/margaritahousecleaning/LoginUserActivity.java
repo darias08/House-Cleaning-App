@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -35,7 +38,7 @@ public class LoginUserActivity extends AppCompatActivity {
 
     private EditText editTextEmail, editTextPassword;
     private TextView registerText;
-    private Button signInBtn;
+    private Button signInBtn, button;
     private ProgressBar progressBar2;
     private TextView ForgotPasswordText;
     private int progressBarCounter = 0;
@@ -46,6 +49,9 @@ public class LoginUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_user);
         getSupportActionBar().hide();
         getWindow().setStatusBarColor(ContextCompat.getColor(LoginUserActivity.this, R.color.redStatusBarColor));
+
+
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -121,12 +127,43 @@ public class LoginUserActivity extends AppCompatActivity {
                 }
 
 
-                //Search how to transition with delay when user has input their information.
-                progressBar2.setVisibility(View.VISIBLE);
+                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            if (user.isEmailVerified()) {
+                                startActivity(new Intent(LoginUserActivity.this.getApplicationContext(), MainHomeActivity.class));
+                                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                                progressBar2.setVisibility(View.VISIBLE);
+                            }
+
+                            else {
+                                user.sendEmailVerification();
+                                Toast.makeText(LoginUserActivity.this, "Check your email to verify your account!", Toast.LENGTH_LONG).show();
+                            }
+
+                        } else {
+                            Toast.makeText(LoginUserActivity.this, "Incorrect email or password!", Toast.LENGTH_LONG).show();
+                            progressBar2.setVisibility(View.GONE);
+                        }
+                    }
+                });
+            }
+        });
+
+    }
+}
+
+
+/*
+
+   progressBar2.setVisibility(View.VISIBLE);
                 Timer timer = new Timer();
                 TimerTask timerTask = new TimerTask() {
                     @Override
                     public void run() {
+
 
                         progressBarCounter++;
                         progressBar2.setProgress(progressBarCounter);
@@ -169,3 +206,4 @@ public class LoginUserActivity extends AppCompatActivity {
 
     }
 }
+ */

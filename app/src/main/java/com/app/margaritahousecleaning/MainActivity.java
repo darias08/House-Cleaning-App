@@ -4,6 +4,8 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Window;
@@ -36,10 +38,12 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+
                 Intent intent = new Intent(MainActivity.this,LoginActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
+
             }
         }, Splash_Screen);
     }

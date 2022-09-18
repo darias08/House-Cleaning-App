@@ -14,7 +14,10 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
 
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
 
+    <style name="Theme_DeviceDefault_Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/redStatusBarColor</item>
     </style>
 
     <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
@@ -31,6 +34,26 @@
     <style name="MyEditText" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">@android:color/darker_gray</item>
         <item name="colorControlActivated">@color/redStatusBarColor</item>
+    </style>
+
+    <style name="dialogstyle" parent="@android:style/Theme.Holo.Light.Panel">
+            <item name="colorPrimary">@color/redStatusBarColor</item>
+            <item name="android:windowAnimationStyle">@style/animations</item>
+            <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="animations">
+        <item name="android:windowEnterAnimation">@anim/slide_out_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_in_right</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/gray</item>
+        <item name="android:textColorLink">@color/redStatusBarColor</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
 
 </resources>

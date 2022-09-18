@@ -818,7 +818,7 @@
                 android:layout_height="71dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="Click on the button below to schedule an appointment and get your cleaning service as soon as possible!"
+                android:text="Click on the button below to schedule an appointment and meet with a representative to get an estimate for your cleaning service."
                 android:textColor="#80FFFFFF"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"

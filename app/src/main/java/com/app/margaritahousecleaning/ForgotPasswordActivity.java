@@ -82,7 +82,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                          Toast.makeText(ForgotPasswordActivity.this, "Reset password submitted. Check your spam/junk if you don't see it.", Toast.LENGTH_LONG).show();
                      }
                      else {
-                         Toast.makeText(ForgotPasswordActivity.this, "Try again! Something wrong happened.", Toast.LENGTH_LONG).show();
+                         Toast.makeText(ForgotPasswordActivity.this, "There is no account associated with this email.", Toast.LENGTH_LONG).show();
                      }
                     }
 
@@ -99,10 +99,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             String userEmail = emailEditText.getText().toString().trim();
             resetPassword.setEnabled(!userEmail.isEmpty());
-
         }
 
         @Override

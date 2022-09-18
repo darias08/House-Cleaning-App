@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:layout_gravity="center" android:orientation="vertical"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="375dp"
+        android:layout_height="343dp"
+        android:background="@drawable/background_calendar"
+        android:padding="25dp">
+
+        <TextView
+        android:id="@+id/CancelBtn"
+        android:layout_width="91dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="2dp"
+        android:gravity="center"
+        android:text="Cancel"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/ConfirmBtn"
+            android:layout_width="91dp"
+            android:layout_height="33dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="2dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="Confirm"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/AvailableTimes"
+            android:layout_width="200dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="Available Times"
+            android:textColor="#80FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/RGroup"
+            app:layout_constraintStart_toStartOf="@+id/RGroup"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="2dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="33dp"
+            android:background="@drawable/gray_drawable"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ConfirmBtn"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toEndOf="@+id/CancelBtn"
+            app:layout_constraintTop_toBottomOf="@+id/RGroup" />
+
+        <in.daemondhruv.customviewgroup.ConstraintRadioGroup
+            android:id="@+id/RGroup"
+            android:layout_width="360dp"
+            android:layout_height="189dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AvailableTimes"
+            app:layout_constraintVertical_bias="0.0">
+
+            <RadioButton
+                android:id="@+id/radio_five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                android:text="2:00 p.m."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/radio_two"
+                app:layout_constraintTop_toBottomOf="@+id/radio_two" />
+
+            <RadioButton
+                android:id="@+id/radio_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                android:text="10:00 a.m."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/radio_four"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.113" />
+
+            <RadioButton
+                android:id="@+id/radio_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                android:text="1:00 p.m."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radio_one"
+                app:layout_constraintVertical_bias="0.013" />
+
+            <RadioButton
+                android:id="@+id/radio_eight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                android:text="5:00 p.m."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/radio_five"
+                app:layout_constraintTop_toBottomOf="@+id/radio_five"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RadioButton
+                android:id="@+id/radio_three"
+                android:layout_width="105dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                android:text="12:00 p.m."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/radio_six"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/radio_seven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                android:text="4:00 p.m."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radio_four"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RadioButton
+                android:id="@+id/radio_six"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="64dp"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                android:text="3:00 p.m."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintStart_toEndOf="@+id/radio_five"
+                app:layout_constraintTop_toBottomOf="@+id/radio_three"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RadioButton
+                android:id="@+id/radio_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="16dp"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                android:text="11:00 a.m."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.014"
+                app:layout_constraintStart_toEndOf="@+id/radio_one"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </in.daemondhruv.customviewgroup.ConstraintRadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+
+    <!--<RadioGroup
+        android:id="@+id/RGroup"
+        android:layout_width="329dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417"> -->
+
+    <!-- android:layout_marginTop="10dp"  -->
+
+
+
+<!--
+
+        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+            android:id="@+id/multiLineRadioGroup"
+            android:layout_width="340dp"
+            android:layout_height="147dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="72dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.39"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:max_in_row="3"
+            app:radio_buttons="@array/radioButtons">
+
+        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+
+ -->

@@ -29,7 +29,7 @@
             android:layout_height="60dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="22dp"
             android:backgroundTint="@color/redStatusBarColor"
             android:padding="10dp"
@@ -45,7 +45,7 @@
             android:layout_width="169dp"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/transparentbutton"
             android:text="Back"
             android:textColor="#80FFFFFF"
@@ -98,7 +98,7 @@
             android:id="@+id/stage1"
             android:layout_width="102dp"
             android:layout_height="41dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="4 of 5"
             android:textColor="#80FFFFFF"
@@ -110,9 +110,9 @@
 
         <EditText
             android:id="@+id/etRFA"
-            android:layout_width="362dp"
-            android:layout_height="326dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="356dp"
+            android:layout_height="164dp"
+            android:layout_marginTop="250dp"
             android:background="@drawable/background_user_response"
             android:ems="10"
             android:gravity="top|start"
@@ -127,7 +127,7 @@
             android:textColorHint="@color/gray"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ReasonForAppt" />
 

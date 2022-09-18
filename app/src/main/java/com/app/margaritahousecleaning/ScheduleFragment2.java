@@ -60,9 +60,9 @@ public class ScheduleFragment2 extends Fragment {
 
         final TextView userAddressTV = (TextView) v.findViewById(R.id.UserAddressInfo);
         final TextView userZipCodeTV = (TextView) v.findViewById(R.id.UserZipCodeInfo);
-        final TextView userPhoneNumberTV = (TextView) v.findViewById(R.id.UserPhoneNumberInfo);
-        final TextView userEmailTV = (TextView) v.findViewById(R.id.UserEmailInfo);
 
+
+        //Getting user information from the database
         databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -71,13 +71,9 @@ public class ScheduleFragment2 extends Fragment {
                 if(userProfile != null) {
                         String streetAddress = userProfile.streetAddress;
                         String zipCode = userProfile.zipCode;
-                        String phoneNumber = userProfile.phoneNumber;
-                        String email = userProfile.email;
 
                         userAddressTV.setText(streetAddress);
                         userZipCodeTV.setText(zipCode);
-                        userPhoneNumberTV.setText(phoneNumber);
-                        userEmailTV.setText(email);
                 }
             }
 

@@ -79,7 +79,7 @@ public class RegisteredUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //Get data from EditTexts into String variables. This is to get the user's response and store their information in the database.
+                //Turn EditText into String variables.
                 final String fullName = editTextFullName.getText().toString().trim();
                 final String streetAddress = editTextStreetAddress.getText().toString().trim();
                 final String zipCode = editTextZipCode.getText().toString().trim();
@@ -177,6 +177,7 @@ public class RegisteredUserActivity extends AppCompatActivity {
         });
     }
 
+    //Textwatcher is if the user has filled out all spaces in order for the button to become active.
     private TextWatcher textWatcher = (new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

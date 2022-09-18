@@ -10,11 +10,6 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_scheduleFragment"
-            app:destination="@id/scheduleFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left" />
-        <action
             android:id="@+id/action_homeFragment_to_locationFragment"
             app:destination="@id/locationFragment"
             app:enterAnim="@anim/slide_in_right"
@@ -22,6 +17,11 @@
         <action
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_scheduleUserFragment2"
+            app:destination="@id/scheduleUserFragment2"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
     </fragment>
@@ -144,6 +144,27 @@
         <action
             android:id="@+id/action_scheduleFragment4_to_scheduleFragment3"
             app:destination="@id/scheduleFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleUserFragment2"
+        android:name="com.app.margaritahousecleaning.ScheduleUserFragment"
+        android:label="ScheduleUserFragment"
+        tools:layout="@layout/fragment_schedule_user">
+        <action
+            android:id="@+id/action_scheduleUserFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_scheduleUserFragment2_to_scheduleUserFragment1"
+            app:destination="@id/scheduleUserFragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleUserFragment1"
+        android:name="com.app.margaritahousecleaning.ScheduleUserFragment1"
+        android:label="ScheduleUserFragment1"
+        tools:layout="@layout/fragment_schedule_user1">
+        <action
+            android:id="@+id/action_scheduleUserFragment1_to_scheduleUserFragment2"
+            app:destination="@id/scheduleUserFragment2" />
     </fragment>
 
 

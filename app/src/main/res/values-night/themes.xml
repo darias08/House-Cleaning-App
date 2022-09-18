@@ -16,6 +16,13 @@
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
 
+    <style name="Theme.AppCompat.Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="DatePickerDialog" parent="android:Theme.DeviceDefault">
+        <item name="android:colorAccent">@color/redStatusBarColor</item>
+    </style>
 
     <style name="AppBottomSheetDialogTheme"
         parent="Theme.Design.Light.BottomSheetDialog">
