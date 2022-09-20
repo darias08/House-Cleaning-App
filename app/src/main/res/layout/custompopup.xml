@@ -33,29 +33,31 @@
             android:id="@+id/yesBtn"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="41dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="11dp"
+            android:layout_marginEnd="47dp"
             android:layout_marginBottom="4dp"
             android:text="Yes"
             android:theme="@style/AppBottomSheetDialogTheme"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/noBtn"
-            app:layout_constraintTop_toBottomOf="@+id/BookAptTitle" />
+            app:layout_constraintEnd_toStartOf="@+id/noBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BookAptTitle"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/noBtn"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
             android:layout_marginTop="11dp"
+            android:layout_marginEnd="40dp"
             android:layout_marginBottom="4dp"
             android:backgroundTint="@color/gray"
             android:text="No"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BookAptTitle" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BookAptTitle"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

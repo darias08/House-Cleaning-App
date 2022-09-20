@@ -22,6 +22,7 @@
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.533" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/drawable/ic_launcher_background.xml" value="0.4725" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/drawable/pressed_btn.xml" value="0.505" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/drawable/radio_btn_enable_disable.xml" value="0.4035" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/drawable/rectangle_12_shape.xml" value="0.4725" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/drawable/roundedcorner.xml" value="0.4725" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/drawable/schedule_time.xml" value="0.426" />
@@ -57,28 +58,33 @@
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/activity_main2.xml" value="0.3828125" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/activity_main_home.xml" value="0.3109375" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/activity_main_test.xml" value="0.18568840579710144" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/activity_maps.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/activity_registered_user.xml" value="0.33" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/bottom_sheet_login.xml" value="0.22" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/bottom_sheet_register.xml" value="0.33" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/bottom_sheet_test.xml" value="0.309375" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/custompopup.xml" value="0.33" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/custompopup.xml" value="0.67" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/custompopup2.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_back_up.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_home.xml" value="0.23842853917362836" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_location.xml" value="0.309375" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_location.xml" value="0.16" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_location1.xml" value="0.25" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_maps.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_register_user.xml" value="0.3796875" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_schedule.xml" value="0.33" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_schedule1.xml" value="0.33" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_schedule2.xml" value="0.22" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_schedule3.xml" value="0.5" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_schedule4.xml" value="0.33" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_schedule_user.xml" value="0.5362903225806451" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_schedule_user.xml" value="0.25" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_schedule_user_booked.xml" value="0.2" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/fragment_settings.xml" value="0.3796875" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/item_main.xml" value="0.553125" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/mycustompopup.xml" value="0.67" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/popup.xml" value="0.42604166666666665" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/register_user.xml" value="0.33" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/test.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/layout/user_location_settings.xml" value="0.33" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/menu/nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/MargaritaHouseCleaning/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.4725" />
       </map>

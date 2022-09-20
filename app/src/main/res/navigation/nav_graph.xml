@@ -69,6 +69,11 @@
             app:destination="@id/settingsFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_locationFragment_to_scheduleUserFragment2"
+            app:destination="@id/scheduleUserFragment2"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -152,19 +157,28 @@
         tools:layout="@layout/fragment_schedule_user">
         <action
             android:id="@+id/action_scheduleUserFragment2_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_scheduleUserFragment2_to_scheduleUserFragment1"
-            app:destination="@id/scheduleUserFragment1" />
+            android:id="@+id/action_scheduleUserFragment2_to_scheduleUserBookedFragment"
+            app:destination="@id/scheduleUserBookedFragment" />
+        <action
+            android:id="@+id/action_scheduleUserFragment2_to_locationFragment"
+            app:destination="@id/locationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
-        android:id="@+id/scheduleUserFragment1"
-        android:name="com.app.margaritahousecleaning.ScheduleUserFragment1"
-        android:label="ScheduleUserFragment1"
-        tools:layout="@layout/fragment_schedule_user1">
+        android:id="@+id/scheduleUserBookedFragment"
+        android:name="com.app.margaritahousecleaning.ScheduleUserBookedFragment"
+        android:label="ScheduleUserBookedFragment"
+        tools:layout="@layout/fragment_schedule_user_booked">
         <action
-            android:id="@+id/action_scheduleUserFragment1_to_scheduleUserFragment2"
-            app:destination="@id/scheduleUserFragment2" />
+            android:id="@+id/action_scheduleUserBookedFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
     </fragment>
 
 

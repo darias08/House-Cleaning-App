@@ -3,6 +3,12 @@ package com.app.margaritahousecleaning;
 import static com.app.margaritahousecleaning.R.id.RGroup;
 import static com.app.margaritahousecleaning.R.id.backgroundView;
 import static com.app.margaritahousecleaning.R.id.bottom_navigation;
+import static com.app.margaritahousecleaning.R.id.homeFragment;
+import static com.app.margaritahousecleaning.R.id.linearLayoutBackground;
+import static com.app.margaritahousecleaning.R.id.locationFragment;
+import static com.app.margaritahousecleaning.R.id.progressBar;
+import static com.app.margaritahousecleaning.R.id.settingsFragment;
+import static com.app.margaritahousecleaning.R.id.timeET;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -14,9 +20,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -25,12 +34,18 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import in.daemondhruv.customviewgroup.ConstraintRadioGroup;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -41,9 +56,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.Calendar;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class ScheduleUserFragment extends Fragment implements com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener {
@@ -60,8 +78,17 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
     private View underlineAddress, underlineZipCode, backgroundRFA, backgroundView;
     private CheckBox checkBox,checkBox2, checkBox3, checkBox4, checkBox5;
     private Button bookBtn, noBtn, yesBtn;
+    private RadioButton RB_10am, RB_11am, RB_12pm, RB_1pm, RB_2pm, RB_3pm, RB_4pm, RB_5pm;
     private Dialog dialog;
+    private BottomNavigationView bottomNavigationView1;
+    private LinearLayout linearLayoutBackground, linearLayoutBackground1;
     private int count = 0;
+    private UserAppointment userAppointment;
+    private ProgressBar progressBar;
+    private int progressBarCounter = 5000;
+    private int progressBarComplete = 6700;
+
+
 
 
     // Max dates to select in the future total.
@@ -78,6 +105,27 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
         //How to set bottom navigation Icon active.
         bottomNavigationView = (BottomNavigationView) v.findViewById(bottom_navigation);
         bottomNavigationView.getMenu().findItem(R.id.scheduleFragment).setChecked(true);
+
+        //Switching screens from navigation bar.
+
+        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(homeFragment);
+        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_scheduleUserFragment2_to_homeFragment);
+            }
+        });
+
+
+        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(locationFragment);
+        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_scheduleUserFragment2_to_locationFragment);
+            }
+        });
+
+
 
         //Calling the resources from the xml and defining their variables.
         dateTXT = v.findViewById(R.id.date);
@@ -102,6 +150,11 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
         checkBox5 = (CheckBox) v.findViewById(R.id.checkBox5);
         backgroundRFA = v.findViewById(R.id.backgroundRFA);
         bookBtn = v.findViewById(R.id.bookBtn);
+        linearLayoutBackground = v.findViewById(R.id.linearLayoutBackground);
+        linearLayoutBackground1 = v.findViewById(R.id.linearLayoutBackground1);
+        bottomNavigationView1 = v.findViewById(bottom_navigation);
+
+
 
 
         dateTXT.setOnClickListener(view -> {
@@ -245,6 +298,8 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.show();
 
+
+        //Calling the resources from the xml and defining their variables.
         Button yesBtn = dialog.findViewById(R.id.yesBtn);
         Button noBtn = dialog.findViewById(R.id.noBtn);
 
@@ -254,6 +309,101 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
                 dialog.dismiss();
             }
         });
+
+        yesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //closing dialog
+                dialog.dismiss();
+
+                //ProgressBar initiating.
+                linearLayoutBackground.setVisibility(View.VISIBLE);
+
+                //Disable all interactive clicks
+                dateTXT.setEnabled(false);
+                etTime.setEnabled(false);
+                questionMark.setEnabled(false);
+                checkBox.setEnabled(false);
+                checkBox2.setEnabled(false);
+                checkBox3.setEnabled(false);
+                checkBox4.setEnabled(false);
+                checkBox5.setEnabled(false);
+                bookBtn.setEnabled(false);
+                Menu menuNav = bottomNavigationView1.getMenu();
+                MenuItem homeFragment = menuNav.findItem(R.id.homeFragment);
+                homeFragment.setEnabled(false);
+                Menu menuNav1 = bottomNavigationView1.getMenu();
+                MenuItem locationFragment = menuNav1.findItem(R.id.locationFragment);
+                locationFragment.setEnabled(false);
+                Menu menuNav2 = bottomNavigationView1.getMenu();
+                MenuItem settingsFragment = menuNav2.findItem(R.id.settingsFragment);
+                settingsFragment.setEnabled(false);
+
+                //Complete book appointment check mark
+                thread1();
+
+                //Storing all data information to database.
+                thread2();
+
+            }
+        });
+    }
+
+
+    private void thread1() {
+        Handler handler1 = new Handler();
+        handler1.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+            //Hide progress bar
+                linearLayoutBackground.setVisibility(View.INVISIBLE);
+            //Show complete check mark
+                linearLayoutBackground1.setVisibility(View.VISIBLE);
+            }
+        }, progressBarCounter);
+    }
+
+    private void thread2() {
+        //Storing user information
+        Handler handler2 = new Handler();
+        handler2.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                    //Setting up to store all information to database.
+                    final String dateET = dateTXT.getText().toString();
+                    final String timeET = etTime.getText().toString();
+                    final String addressTV = userInputAddress.getText().toString();
+                    final String zipcodeTV = userInputZipCode.getText().toString();
+                    final String residentialCheckBox = checkBox.getText().toString();
+                    final String officeCheckBox = checkBox2.getText().toString();
+
+                    UserAppointment userAppointment = new UserAppointment(dateET, timeET, addressTV, zipcodeTV);
+
+                    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                    FirebaseDatabase.getInstance().getReference("Booked Appointments")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(userAppointment)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Navigation.findNavController(getView()).navigate(R.id.action_scheduleUserFragment2_to_scheduleUserBookedFragment);
+
+                                        if (checkBox.isChecked()) {
+                                            userAppointment.setResidentialCheckBox(residentialCheckBox);
+                                            databaseReference.getDatabase().getReference("Booked Appointments").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(userAppointment);
+                                        }
+                                        if (checkBox2.isChecked()) {
+                                            userAppointment.setOfficeCheckBox(officeCheckBox);
+                                            databaseReference.getDatabase().getReference("Booked Appointments").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(userAppointment);
+                                        }
+                                    }
+                                }
+                            });
+
+                }
+            }, progressBarComplete);
     }
 
     @Override
@@ -339,7 +489,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
 
 
                         //Setting up animations for user contact information.
-                        Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fade_in);
+                        Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_in_left);
                         tvUserLocation.setAnimation(animation);
                         userAddress.setAnimation(animation);
                         userZipCode.setAnimation(animation);

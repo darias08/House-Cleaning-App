@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_fragment2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/_bg__register_ek2_shape">
+
+
+        <TextView
+            android:id="@+id/Book_Appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Book Appointment"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/Notification"
+            android:layout_width="36dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/Book_Appointment"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_notifications_24" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="730dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="26dp" />
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcorner2"
+            app:itemTextColor="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/nav_menu" >
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="380dp" />
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
+
+
+<!--
+ <ScrollView
+            android:layout_width="227dp"
+            android:layout_height="181dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="128dp"
+            android:background="@drawable/background_calendar"
+            android:padding="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline13"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/tvRFA"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="173dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="183dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    android:text="Residential Cleaning"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="159dp"
+                    android:layout_height="43dp"
+                    android:gravity="center"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    android:text="Office Cleaning"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    android:text="Bathroom Cleaning"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+
+                <CheckBox
+                    android:id="@+id/checkBox4"
+                    android:layout_width="152dp"
+                    android:layout_height="47dp"
+                    android:gravity="center"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    android:text="Carpet Cleaning"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+
+                <CheckBox
+                    android:id="@+id/checkBox5"
+                    android:layout_width="158dp"
+                    android:layout_height="42dp"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    android:text="Other"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+            </LinearLayout>
+        </ScrollView>
+-->
+
+
+
+
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/_bg__register_ek2_shape">
+
+
+            <TextView
+                android:id="@+id/tvRFA"
+                android:layout_width="265dp"
+                android:layout_height="27dp"
+                android:text="Reason for appointment: "
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.178"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="302dp" />
+
+            <TextView
+                android:id="@+id/timeSelectionText"
+                android:layout_width="131dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="16dp"
+                android:text="Select a time:"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.103"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date" />
+
+
+            <EditText
+                android:id="@+id/timeET"
+                android:layout_width="152dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background_calendar"
+                android:focusable="false"
+                android:hint="00:00"
+                android:paddingLeft="25dp"
+                android:textColor="@color/white"
+                android:textColorHint="#80EAEAEA"
+                android:textSize="16sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.103"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeSelectionText" />
+
+            <Button
+                android:id="@+id/BookBtn"
+                android:layout_width="200dp"
+                android:layout_height="61dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="30dp"
+                android:enabled="false"
+                android:padding="10dp"
+                android:text="Book"
+                android:theme="@style/AppBottomSheetDialogTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.555"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="593dp" />
+
+            <TextView
+                android:id="@+id/Book_Appointment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:text="Book Appointment"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/DateSelectionText"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/Notification"
+                android:layout_width="36dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="35dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.933"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_notifications_24" />
+
+            <EditText
+                android:id="@+id/date"
+                android:layout_width="163dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background_calendar"
+                android:focusable="false"
+                android:hint="mm/dd/yyyy"
+                android:paddingLeft="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="#80EAEAEA"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.118"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/DateSelectionText" />
+
+            <TextView
+                android:id="@+id/DateSelectionText"
+                android:layout_width="131dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="36dp"
+                android:text="Select a date:"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.111"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Book_Appointment" />
+
+            <ImageView
+                android:id="@+id/calendarImage"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/calendar_image"
+                app:layout_constraintBottom_toBottomOf="@+id/date"
+                app:layout_constraintEnd_toEndOf="@+id/date"
+                app:layout_constraintHorizontal_bias="0.924"
+                app:layout_constraintStart_toStartOf="@+id/date"
+                app:layout_constraintTop_toTopOf="@+id/date"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/timeIcon"
+                android:layout_width="22dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="95dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/timeET"
+                app:layout_constraintEnd_toEndOf="@+id/timeET"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/timeET"
+                app:layout_constraintTop_toTopOf="@+id/timeET"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/schedule_time" />
+
+
+            <EditText
+                android:id="@+id/etRFA1"
+                android:layout_width="361dp"
+                android:layout_height="169dp"
+                android:background="@drawable/background_calendar"
+                android:ems="10"
+                android:gravity="top|start"
+                android:hint="Please type here..."
+                android:inputType="textMultiLine"
+                android:lines="15"
+                android:maxLines="15"
+                android:minLines="6"
+                android:padding="15dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="16sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="389dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="851dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="790dp"
+        android:background="@drawable/roundedcorner2"
+        app:itemTextColor="#fff"
+        app:menu="@menu/nav_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>
+
+
+
+-->
+

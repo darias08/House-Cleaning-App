@@ -86,22 +86,23 @@
             app:layout_constraintVertical_bias="0.0">
 
             <RadioButton
-                android:id="@+id/radio_five"
+                android:id="@+id/RB_2pm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:scaleX="1.0"
                 android:scaleY="1.0"
                 android:text="2:00 p.m."
-                android:textColor="@color/white"
+                android:enabled="true"
+                android:textColor="@drawable/radio_btn_enable_disable"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/radio_two"
-                app:layout_constraintTop_toBottomOf="@+id/radio_two" />
+                app:layout_constraintStart_toStartOf="@+id/RB_11am"
+                app:layout_constraintTop_toBottomOf="@+id/RB_11am" />
 
             <RadioButton
-                android:id="@+id/radio_one"
+                android:id="@+id/RB_10am"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleX="1.0"
@@ -110,12 +111,12 @@
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/radio_four"
+                app:layout_constraintStart_toStartOf="@+id/RB_1pm"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.113" />
 
             <RadioButton
-                android:id="@+id/radio_four"
+                android:id="@+id/RB_1pm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -127,11 +128,11 @@
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radio_one"
+                app:layout_constraintTop_toBottomOf="@+id/RB_10am"
                 app:layout_constraintVertical_bias="0.013" />
 
             <RadioButton
-                android:id="@+id/radio_eight"
+                android:id="@+id/RB_5pm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -144,12 +145,12 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/radio_five"
-                app:layout_constraintTop_toBottomOf="@+id/radio_five"
+                app:layout_constraintStart_toStartOf="@+id/RB_2pm"
+                app:layout_constraintTop_toBottomOf="@+id/RB_2pm"
                 app:layout_constraintVertical_bias="0.0" />
 
             <RadioButton
-                android:id="@+id/radio_three"
+                android:id="@+id/RB_12pm"
                 android:layout_width="105dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="16dp"
@@ -160,11 +161,11 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/radio_six"
+                app:layout_constraintStart_toStartOf="@+id/RB_3pm"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <RadioButton
-                android:id="@+id/radio_seven"
+                android:id="@+id/RB_4pm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -177,11 +178,11 @@
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radio_four"
+                app:layout_constraintTop_toBottomOf="@+id/RB_1pm"
                 app:layout_constraintVertical_bias="0.0" />
 
             <RadioButton
-                android:id="@+id/radio_six"
+                android:id="@+id/RB_3pm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
@@ -196,12 +197,12 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.13"
-                app:layout_constraintStart_toEndOf="@+id/radio_five"
-                app:layout_constraintTop_toBottomOf="@+id/radio_three"
+                app:layout_constraintStart_toEndOf="@+id/RB_2pm"
+                app:layout_constraintTop_toBottomOf="@+id/RB_12pm"
                 app:layout_constraintVertical_bias="0.0" />
 
             <RadioButton
-                android:id="@+id/radio_two"
+                android:id="@+id/RB_11am"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -213,7 +214,7 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.014"
-                app:layout_constraintStart_toEndOf="@+id/radio_one"
+                app:layout_constraintStart_toEndOf="@+id/RB_10am"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </in.daemondhruv.customviewgroup.ConstraintRadioGroup>

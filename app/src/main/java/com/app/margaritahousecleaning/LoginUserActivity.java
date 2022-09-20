@@ -51,8 +51,6 @@ public class LoginUserActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(ContextCompat.getColor(LoginUserActivity.this, R.color.redStatusBarColor));
 
 
-
-
         mAuth = FirebaseAuth.getInstance();
 
         //User forgot their password.

@@ -10,9 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -21,6 +29,26 @@ public class LocationFragment extends Fragment {
 
     BottomNavigationView bottomNavigationView;
     BottomNavigationItemView bottomNavigationItemView;
+
+    private OnMapReadyCallback callback = new OnMapReadyCallback() {
+
+        @Override
+        public void onMapReady(GoogleMap googleMap) {
+            LatLng California = new LatLng(37.74266, -121.43499);
+            googleMap.addMarker(new MarkerOptions().position(California).title("Margarita's House Cleaning Office"));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(California, 15));
+        }
+    };
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(callback);
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,7 +63,7 @@ public class LocationFragment extends Fragment {
         bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_locationFragment_to_scheduleFragment);
+                Navigation.findNavController(view).navigate(R.id.action_locationFragment_to_scheduleUserFragment2);
             }
         });
 
@@ -54,6 +82,8 @@ public class LocationFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_locationFragment_to_settingsFragment);
             }
         });
+
+
 
         return v;
     }
