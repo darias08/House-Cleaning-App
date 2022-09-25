@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/SettingsFragmentXML"
@@ -8,29 +8,457 @@
     android:background="@drawable/_bg__register_ek2_shape"
     tools:context=".HomeFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-3dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/accountBackground"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:background="@drawable/regular_background"
+                app:layout_constraintBottom_toBottomOf="@+id/line15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/line16"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="128dp"
+                android:background="@drawable/gray_line"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line15" />
+
+            <View
+                android:id="@+id/line15"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoutUser" />
+
+            <View
+                android:id="@+id/line13"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/logoutUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Logout"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/line12" />
+
+            <View
+                android:id="@+id/line12"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LocationSettings" />
+
+            <TextView
+                android:id="@+id/LocationSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Turn On/Off my Location"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/line11" />
+
+            <View
+                android:id="@+id/line11"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/NotificationsSettings" />
+
+            <TextView
+                android:id="@+id/NotificationsSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Turn On/Off Notifications"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/line10" />
+
+            <View
+                android:id="@+id/line10"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aboutUs" />
+
+            <TextView
+                android:id="@+id/aboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="About us"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/line9" />
+
+            <View
+                android:id="@+id/line9"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TermsAndConditions" />
+
+            <View
+                android:id="@+id/line8"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintBottom_toTopOf="@+id/accountBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/App" />
+
+            <TextView
+                android:id="@+id/TermsAndConditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terms and Conditions"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                tools:layout_editor_absoluteY="676dp" />
+
+            <TextView
+                android:id="@+id/profileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="328dp"
+                android:layout_marginBottom="16dp"
+                android:text="Your Profile"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/profileBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline15" />
+
+            <View
+                android:id="@+id/profileBackground"
+                android:layout_width="match_parent"
+                android:layout_height="228dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/regular_background"
+                app:layout_constraintBottom_toTopOf="@+id/accountTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/line14"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintBottom_toBottomOf="@+id/profileBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_Phone_Number" />
+
+            <View
+                android:id="@+id/line6"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="441dp" />
+
+            <TextView
+                android:id="@+id/user_Phone_Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Phone Number"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/line6" />
+
+            <View
+                android:id="@+id/line5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accountTitle" />
+
+            <TextView
+                android:id="@+id/user_ZipCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zip Code"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                tools:layout_editor_absoluteY="400dp" />
+
+            <View
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LastNameTV" />
+
+            <TextView
+                android:id="@+id/FirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="First Name"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toTopOf="@+id/profileBackground" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="19dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintBottom_toTopOf="@+id/LastNameTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FirstName" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/profileBackground" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="101dp"
+                android:layout_height="101dp"
+                android:layout_marginTop="68dp"
+                app:layout_constraintBottom_toTopOf="@+id/profileTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.464"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/user_profile" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <TextView
+                android:id="@+id/LastNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LastName"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                tools:layout_editor_absoluteY="343dp" />
+
+            <TextView
+                android:id="@+id/ZipCode"
+                android:layout_width="122dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="36dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/guideline16"
+                app:layout_constraintHorizontal_bias="0.989"
+                app:layout_constraintStart_toEndOf="@+id/user_ZipCode"
+                app:layout_constraintTop_toBottomOf="@+id/line4" />
+
+
+            <TextView
+                android:id="@+id/Address"
+                android:layout_width="122dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@+id/line4"
+                app:layout_constraintEnd_toStartOf="@+id/guideline16"
+                app:layout_constraintHorizontal_bias="0.704"
+                app:layout_constraintStart_toEndOf="@+id/LastNameTV"
+                app:layout_constraintTop_toBottomOf="@+id/line2"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/FullName"
+                android:layout_width="122dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="18dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@+id/line2"
+                app:layout_constraintEnd_toStartOf="@+id/guideline16"
+                app:layout_constraintStart_toEndOf="@+id/FirstName"
+                app:layout_constraintTop_toTopOf="@+id/profileBackground"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/PhoneNumber"
+                android:layout_width="122dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="36dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/guideline16"
+                app:layout_constraintHorizontal_bias="0.985"
+                app:layout_constraintStart_toEndOf="@+id/user_Phone_Number"
+                app:layout_constraintTop_toBottomOf="@+id/line6" />
+
+            <TextView
+                android:id="@+id/accountTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Account"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline16"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/profileBackground" />
+
+            <View
+                android:id="@+id/accountBackground1"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/regular_background"
+                app:layout_constraintBottom_toTopOf="@+id/line7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accountTitle" />
+
+            <View
+                android:id="@+id/line7"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/gray_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accountBackground1" />
+
+            <TextView
+                android:id="@+id/UpdateEmailPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update Email/Password"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/accountBackground1"
+                app:layout_constraintEnd_toStartOf="@+id/guideline16"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/line5"
+                app:layout_constraintVertical_bias="0.533" />
+
+            <TextView
+                android:id="@+id/App"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="383dp"
+                android:text="App"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/line7" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.90" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp"
         android:background="@drawable/roundedcorner2"
         app:itemTextColor="#fff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/nav_menu"/>
+        app:menu="@menu/nav_menu">
 
-    <TextView
-        android:id="@+id/SelectionPages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerInParent="true"
-        android:text="Settings Page"
-        android:textColor="#fff"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>

@@ -1,9 +1,7 @@
 package com.app.margaritahousecleaning;
 
 import static com.app.margaritahousecleaning.R.id.bottom_navigation;
-import static com.app.margaritahousecleaning.R.id.dateSelected;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -84,7 +82,7 @@ public class ScheduleFragment4 extends Fragment {
         databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User userProfile = snapshot.getValue(User.class);
+                UserProfile userProfile = snapshot.getValue(UserProfile.class);
                 if (userProfile != null) {
                     String streetAddress = userProfile.streetAddress;
                     String zipCode = userProfile.zipCode;

@@ -1,18 +1,12 @@
 package com.app.margaritahousecleaning;
 
 import static com.app.margaritahousecleaning.R.id.RGroup;
-import static com.app.margaritahousecleaning.R.id.backgroundView;
 import static com.app.margaritahousecleaning.R.id.bottom_navigation;
 import static com.app.margaritahousecleaning.R.id.homeFragment;
-import static com.app.margaritahousecleaning.R.id.linearLayoutBackground;
 import static com.app.margaritahousecleaning.R.id.locationFragment;
-import static com.app.margaritahousecleaning.R.id.progressBar;
-import static com.app.margaritahousecleaning.R.id.settingsFragment;
-import static com.app.margaritahousecleaning.R.id.timeET;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -22,7 +16,6 @@ import androidx.navigation.Navigation;
 
 import android.os.Handler;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,7 +30,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import in.daemondhruv.customviewgroup.ConstraintRadioGroup;
@@ -45,7 +37,6 @@ import in.daemondhruv.customviewgroup.ConstraintRadioGroup;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -55,13 +46,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.Serializable;
-import java.sql.Time;
 import java.util.Calendar;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 public class ScheduleUserFragment extends Fragment implements com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener {
@@ -135,6 +121,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
         tvTime = v.findViewById(R.id.timeSelectionText);
         backgroundView = v.findViewById(R.id.backgroundView2);
         tvUserLocation = v.findViewById(R.id.UserAppointmentLocation);
+        RB_2pm = v.findViewById(R.id.RB_2pm);
         userAddress = v.findViewById(R.id.userAddress1);
         userZipCode = v.findViewById(R.id.userZipCode1);
         userInputAddress = v.findViewById(R.id.userAddressInfo);
@@ -204,6 +191,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
         etTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 showDialog();
             }
         });
@@ -382,6 +370,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
 
                     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+
                     FirebaseDatabase.getInstance().getReference("Booked Appointments")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(userAppointment)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -389,6 +378,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         Navigation.findNavController(getView()).navigate(R.id.action_scheduleUserFragment2_to_scheduleUserBookedFragment);
+
 
                                         if (checkBox.isChecked()) {
                                             userAppointment.setResidentialCheckBox(residentialCheckBox);
@@ -418,7 +408,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
         tvTime.setVisibility(View.VISIBLE);
 
         //Setting up animations for select time.
-        Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_in_right);
+        Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_in_right_slower);
         etTime.setAnimation(animation);
         timeIcon.setAnimation(animation);
         tvTime.setAnimation(animation);
@@ -489,7 +479,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
 
 
                         //Setting up animations for user contact information.
-                        Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_in_left);
+                        Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_in_left_slower);
                         tvUserLocation.setAnimation(animation);
                         userAddress.setAnimation(animation);
                         userZipCode.setAnimation(animation);
@@ -538,7 +528,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
                 databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        User userProfile = snapshot.getValue(User.class);
+                        UserProfile userProfile = snapshot.getValue(UserProfile.class);
 
                         if (userProfile != null) {
                             String streetAddress = userProfile.streetAddress;

@@ -16,6 +16,49 @@
         android:background="@drawable/_bg__register_ek2_shape">
 
 
+        <EditText
+            android:id="@+id/date3"
+            android:layout_width="163dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/background_calendar"
+            android:enabled="false"
+            android:focusable="false"
+            android:hint="mm/dd/yyyy"
+            android:paddingLeft="20dp"
+            android:textColor="#80FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/dateSelectionText" />
+
+        <ImageView
+            android:id="@+id/calendarImage2"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:enabled="false"
+            android:src="@drawable/calendar_image"
+            app:layout_constraintBottom_toBottomOf="@+id/date3"
+            app:layout_constraintEnd_toEndOf="@+id/date3"
+            app:layout_constraintStart_toStartOf="@+id/date3"
+            app:layout_constraintTop_toTopOf="@+id/date3" />
+
+        <TextView
+            android:id="@+id/dateSelectionText"
+            android:layout_width="131dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="254dp"
+            android:text="Select a date:"
+            android:textColor="#80FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/Book_Appointment" />
+
         <TextView
             android:id="@+id/Book_Appointment"
             android:layout_width="wrap_content"
@@ -65,7 +108,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/nav_menu" >
+            app:menu="@menu/nav_menu">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"

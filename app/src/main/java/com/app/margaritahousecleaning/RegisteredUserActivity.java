@@ -2,10 +2,14 @@ package com.app.margaritahousecleaning;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -27,7 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisteredUserActivity extends AppCompatActivity {
 
 
-    private EditText editTextFullName, editTextStreetAddress, editTextZipCode, editTextPhoneNumber, editTextEmail, editTextPassword;
+    private EditText editTextFirstName, editTextLastName, editTextStreetAddress, editTextZipCode, editTextPhoneNumber, editTextEmail, editTextPassword;
     private Button buttonRegister;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
@@ -35,6 +39,9 @@ public class RegisteredUserActivity extends AppCompatActivity {
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://margarita-house-cleaning-default-rtdb.firebaseio.com/");
     private String userID;
     private TextView loginText;
+
+    //Global Variables
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +51,8 @@ public class RegisteredUserActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(ContextCompat.getColor(RegisteredUserActivity.this, R.color.redStatusBarColor));
 
 
-        editTextFullName = findViewById(R.id.edit_text_FullName);
+        editTextFirstName = findViewById(R.id.edit_text_FirstName);
+        editTextLastName = findViewById(R.id.edit_text_LastName);
         editTextStreetAddress = findViewById(R.id.edit_text_StreetAddress);
         editTextZipCode = findViewById(R.id.edit_text_ZipCode);
         editTextPhoneNumber = findViewById(R.id.edit_text_PhoneNumber);
@@ -55,7 +63,8 @@ public class RegisteredUserActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         mAuth = FirebaseAuth.getInstance();
 
-        editTextFullName.addTextChangedListener(textWatcher);
+        editTextFirstName.addTextChangedListener(textWatcher);
+        editTextLastName.addTextChangedListener(textWatcher);
         editTextStreetAddress.addTextChangedListener(textWatcher);
         editTextZipCode.addTextChangedListener(textWatcher);
         editTextPhoneNumber.addTextChangedListener(textWatcher);
@@ -68,10 +77,23 @@ public class RegisteredUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-               Intent intent = new Intent(RegisteredUserActivity.this, LoginUserActivity.class);
-               startActivity(intent);
-               finish();
+                Intent intent = new Intent(RegisteredUserActivity.this, LoginUserActivity.class);
+                startActivity(intent);
+                finish();
 
+            }
+        });
+
+        String[] permission = {
+                Manifest.permission.READ_PHONE_NUMBERS
+        };
+
+        requestPermissions(permission, 102);
+
+        editTextPhoneNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setPhoneNumberToEditText();
             }
         });
 
@@ -80,7 +102,8 @@ public class RegisteredUserActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Turn EditText into String variables.
-                final String fullName = editTextFullName.getText().toString().trim();
+                final String firstName = editTextFirstName.getText().toString().trim();
+                final String lastName = editTextLastName.getText().toString().trim();
                 final String streetAddress = editTextStreetAddress.getText().toString().trim();
                 final String zipCode = editTextZipCode.getText().toString().trim();
                 final String phoneNumber = editTextPhoneNumber.getText().toString().trim();
@@ -89,9 +112,14 @@ public class RegisteredUserActivity extends AppCompatActivity {
 
 
                 //Check if the user has filled all the fields before sending the data to firebase.
-                if (fullName.isEmpty()) {
-                    editTextFullName.setError("Please provide a full name!");
-                    editTextFullName.requestFocus();
+                if (firstName.isEmpty()) {
+                    editTextFirstName.setError("Please provide a first name!");
+                    editTextFirstName.requestFocus();
+                    return;
+                }
+                if (lastName.isEmpty()) {
+                    editTextLastName.setError("Please provide a last name!");
+                    editTextLastName.requestFocus();
                     return;
                 }
                 if (TextUtils.isEmpty(streetAddress)) {
@@ -140,13 +168,13 @@ public class RegisteredUserActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            User user = new User(fullName, streetAddress, zipCode, phoneNumber, email, password);
+                            UserProfile userProfile = new UserProfile(firstName, lastName, streetAddress, zipCode, phoneNumber, email, password);
 
                             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
                             FirebaseDatabase.getInstance().getReference("Registered Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    .setValue(userProfile).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
 
@@ -161,7 +189,6 @@ public class RegisteredUserActivity extends AppCompatActivity {
                                                 Toast.makeText(RegisteredUserActivity.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
                                                 progressBar.setVisibility(View.GONE);
                                             }
-
                                         }
                                     });
                         } else {
@@ -177,6 +204,16 @@ public class RegisteredUserActivity extends AppCompatActivity {
         });
     }
 
+    private void setPhoneNumberToEditText() {
+
+        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+
+            return;
+        }
+        editTextPhoneNumber.setText(telephonyManager.getLine1Number());
+    }
+
     //Textwatcher is if the user has filled out all spaces in order for the button to become active.
     private TextWatcher textWatcher = (new TextWatcher() {
         @Override
@@ -187,14 +224,15 @@ public class RegisteredUserActivity extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-            String userFullName = editTextFullName.getText().toString().trim();
+            String userFirstName = editTextFirstName.getText().toString().trim();
+            String userLastName = editTextLastName.getText().toString().trim();
             String userStreetAddress = editTextStreetAddress.getText().toString().trim();
             String userZipCode = editTextZipCode.getText().toString().trim();
             String userPhoneNumber = editTextPhoneNumber.getText().toString().trim();
             String userEmail = editTextEmail.getText().toString().trim();
             String userPassword = editTextPassword.getText().toString().trim();
 
-            buttonRegister.setEnabled(!userFullName.isEmpty() && !userStreetAddress.isEmpty() && !userZipCode.isEmpty() && !userPhoneNumber.isEmpty() && !userEmail.isEmpty() && !userPassword.isEmpty());
+            buttonRegister.setEnabled(!userFirstName.isEmpty() && !userLastName.isEmpty() && !userStreetAddress.isEmpty() && !userZipCode.isEmpty() && !userPhoneNumber.isEmpty() && !userEmail.isEmpty() && !userPassword.isEmpty());
 
         }
 

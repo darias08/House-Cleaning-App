@@ -35,7 +35,6 @@ public class LoginUserActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://margarita-house-cleaning-default-rtdb.firebaseio.com/");
-
     private EditText editTextEmail, editTextPassword;
     private TextView registerText;
     private Button signInBtn, button;
@@ -149,6 +148,9 @@ public class LoginUserActivity extends AppCompatActivity {
                 });
             }
         });
+
+    }
+    public void isUser() {
 
     }
 }
