@@ -6,6 +6,7 @@ import static com.app.margaritahousecleaning.R.id.locationFragment;
 import static com.app.margaritahousecleaning.R.id.scheduleFragment;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -49,10 +50,11 @@ public class SettingsFragment extends Fragment {
     private DatabaseReference databaseReference;
     private FirebaseUser user;
     private String userID;
-    private ImageView EditText1,EditText1OFF, EditText2OFF, EditText2, EditText3, EditText4, EditText5;
+    private ImageView EditText1,EditText1OFF, EditText2OFF, EditText2, EditText3, EditText3OFF, EditText4, EditText4OFF, EditText5, EditText5OFF;
     private Button saveBtn;
-    private EditText userFirstNameET, userLastNameET;
+    private EditText userFirstNameET, userLastNameET, userStreetAddressET, userZipCodeET, userPhoneNumberET;
     private int count = 0;
+    ImageView right_Arrow1, right_Arrow2, right_Arrow3, right_Arrow4;
     BottomNavigationView bottomNavigationView;
     BottomNavigationItemView bottomNavigationItemView;
 
@@ -62,7 +64,7 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_settings_test, container, false);
+        View v = inflater.inflate(R.layout.fragment_settings, container, false);
 
         //Calling Resources from .xml
         EditText1 = v.findViewById(R.id.EditText1);
@@ -70,25 +72,31 @@ public class SettingsFragment extends Fragment {
         EditText2 = v.findViewById(R.id.EditText2);
         EditText2OFF = v.findViewById(R.id.EditText2OFF);
         EditText3 = v.findViewById(R.id.EditText3);
+        EditText3OFF = v.findViewById(R.id.EditText3OFF);
         EditText4 = v.findViewById(R.id.EditText4);
+        EditText4OFF = v.findViewById(R.id.EditText4OFF);
         EditText5 = v.findViewById(R.id.EditText5);
+        EditText5OFF = v.findViewById(R.id.EditText5OFF);
         saveBtn = v.findViewById(R.id.saveBtn);
+
+        //Right arrow image
+        right_Arrow4 = v.findViewById(R.id.r_arrow4);
 
         //Displaying user information from database (TextView).
         TextView userFirstNameTV = (TextView) v.findViewById(R.id.FirstNameTV);
         TextView userLastNameTV = (TextView) v.findViewById(R.id.LastNameTV);
-        TextView userStreetAddress = (TextView) v.findViewById(R.id.address);
-        TextView userZipCode = (TextView) v.findViewById(R.id.ZipCode);
-        TextView userPhoneNumber = (TextView) v.findViewById(R.id.PhoneNumber);
+        TextView userStreetAddressTV = ((TextView) v.findViewById(R.id.addressTV));
+        TextView userZipCodeTV = (TextView) v.findViewById(R.id.ZipCodeTV);
+        TextView userPhoneNumberTV = (TextView) v.findViewById(R.id.PhoneNumberTV);
 
         //Displaying user information from database (EditText).
         userFirstNameET = (EditText) v.findViewById(R.id.FirstNameET);
         userLastNameET = (EditText) v.findViewById(R.id.LastNameET);
-        //EditText userStreetAddress = (EditText) v.findViewById(R.id.address);
-        //EditText userZipCode = (EditText) v.findViewById(R.id.ZipCode);
-        //EditText userPhoneNumber = (EditText) v.findViewById(R.id.PhoneNumber);
+        userStreetAddressET = (EditText) v.findViewById(R.id.addressET);
+        userZipCodeET = (EditText) v.findViewById(R.id.ZipCodeET);
+        userPhoneNumberET = (EditText) v.findViewById(R.id.PhoneNumberET);
 
-
+        //Displaying editText Image so users can edit their profile.
         EditText1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,6 +133,7 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        //Disabling editText when user has completed their updating profile.
         EditText1OFF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,6 +146,7 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        //Displaying editText Image so users can edit their profile.
         EditText2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -158,7 +168,7 @@ public class SettingsFragment extends Fragment {
                         String userLastName = userLastNameET.getText().toString().trim();
 
                         if (userLastName.isEmpty()) {
-                            userLastNameET.setError("Please provide a first name!");
+                            userLastNameET.setError("Please provide a last name!");
                             userLastNameET.requestFocus();
                             return;
                         }
@@ -173,6 +183,7 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        //Disabling editText when user has completed their updating profile.
         EditText2OFF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -184,6 +195,166 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        //Displaying editText Image so users can edit their profile.
+        EditText3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText3OFF.setColorFilter(Color.parseColor("#F1CD17"), PorterDuff.Mode.SRC_IN);
+                userStreetAddressTV.setVisibility(View.INVISIBLE);
+                userStreetAddressET.setVisibility(View.VISIBLE);
+                EditText3OFF.setVisibility(View.VISIBLE);
+
+
+
+                userStreetAddressET.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                        String userStreetAddress = userStreetAddressET.getText().toString().trim();
+
+                        if (userStreetAddress.isEmpty()) {
+                            userStreetAddressET.setError("Please provide a street address!");
+                            userStreetAddressET.requestFocus();
+                            return;
+                        }
+                        saveBtn.setEnabled(true);
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+
+                    }
+                });
+            }
+        });
+
+        //Disabling editText when user has completed their updating profile.
+        EditText3OFF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userStreetAddressTV.setVisibility(View.VISIBLE);
+                userStreetAddressET.setVisibility(View.INVISIBLE);
+                EditText3OFF.setVisibility(View.INVISIBLE);
+                EditText3.setVisibility(View.VISIBLE);
+
+                saveBtn.setEnabled(false);
+            }
+        });
+
+        //Displaying editText Image so users can edit their profile.
+        EditText4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText4OFF.setColorFilter(Color.parseColor("#F1CD17"), PorterDuff.Mode.SRC_IN);
+                userZipCodeTV.setVisibility(View.INVISIBLE);
+                userZipCodeET.setVisibility(View.VISIBLE);
+                EditText4OFF.setVisibility(View.VISIBLE);
+
+
+
+                userZipCodeET.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                        String userZipCode = userZipCodeET.getText().toString().trim();
+
+                        if (userZipCode.isEmpty()) {
+                            userZipCodeET.setError("Please provide a zip code!");
+                            userZipCodeET.requestFocus();
+                            return;
+                        }
+                        saveBtn.setEnabled(true);
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+
+                    }
+                });
+            }
+        });
+
+        //Disabling editText when user has completed their updating profile.
+        EditText4OFF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userZipCodeTV.setVisibility(View.VISIBLE);
+                userZipCodeET.setVisibility(View.INVISIBLE);
+                EditText4OFF.setVisibility(View.INVISIBLE);
+                EditText4.setVisibility(View.VISIBLE);
+
+                saveBtn.setEnabled(false);
+            }
+        });
+
+        //Displaying editText Image so users can edit their profile.
+        EditText5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText5OFF.setColorFilter(Color.parseColor("#F1CD17"), PorterDuff.Mode.SRC_IN);
+                userPhoneNumberTV.setVisibility(View.INVISIBLE);
+                userPhoneNumberET.setVisibility(View.VISIBLE);
+                EditText5OFF.setVisibility(View.VISIBLE);
+
+
+
+                userPhoneNumberET.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                        String userPhoneNumber = userPhoneNumberET.getText().toString().trim();
+
+                        if (userPhoneNumber.isEmpty()) {
+                            userPhoneNumberET.setError("Please provide a phone number!");
+                            userPhoneNumberET.requestFocus();
+                            return;
+                        }
+                        saveBtn.setEnabled(true);
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+
+                    }
+                });
+            }
+        });
+
+        //Disabling editText when user has completed their updating profile.
+        EditText5OFF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userPhoneNumberTV.setVisibility(View.VISIBLE);
+                userPhoneNumberET.setVisibility(View.INVISIBLE);
+                EditText5OFF.setVisibility(View.INVISIBLE);
+                EditText5.setVisibility(View.VISIBLE);
+
+                saveBtn.setEnabled(false);
+            }
+        });
+
+        //Logging user out of their account
+        right_Arrow4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+                Toast.makeText(getActivity(), "You have logged out.", Toast.LENGTH_LONG).show();
+                getActivity().finish();
+            }
+        });
 
         //Activating Firebase
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -194,7 +365,7 @@ public class SettingsFragment extends Fragment {
         //User's ID
         userID = user.getUid();
 
-
+        //retrieving user data from firebase.
         databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -205,20 +376,26 @@ public class SettingsFragment extends Fragment {
                     String firstNameET = userProfile.firstName;
                     String lastNameTV = userProfile.lastName;
                     String lastNameET = userProfile.lastName;
-                    String address = userProfile.streetAddress;
-                    String zipCode = userProfile.zipCode;
-                    String phoneNumber = userProfile.phoneNumber;
+                    String streetAddressTV = userProfile.streetAddress;
+                    String streetAddressET = userProfile.streetAddress;
+                    String zipCodeTV = userProfile.zipCode;
+                    String zipCodeET = userProfile.zipCode;
+                    String phoneNumberTV = userProfile.phoneNumber;
+                    String phoneNumberET = userProfile.phoneNumber;
 
                     //TextView
                     userFirstNameTV.setText(firstNameTV);
                     userLastNameTV.setText(lastNameTV);
-                    userStreetAddress.setText(address);
-                    userZipCode.setText(zipCode);
-                    userPhoneNumber.setText(phoneNumber);
+                    userStreetAddressTV.setText(streetAddressTV);
+                    userZipCodeTV.setText(zipCodeTV);
+                    userPhoneNumberTV.setText(phoneNumberTV);
 
                     //EditText
                     userFirstNameET.setText(firstNameET);
                     userLastNameET.setText(lastNameET);
+                    userStreetAddressET.setText(streetAddressET);
+                    userZipCodeET.setText(zipCodeET);
+                    userPhoneNumberET.setText(phoneNumberET);
                 }
             }
 
@@ -228,21 +405,28 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-
+        //User saving their profile data.
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                String firstNameET = userFirstNameET.getText().toString();
                String lastNameET = userLastNameET.getText().toString();
+               String streetAddressET =userStreetAddressET.getText().toString();
+               String zipCodeET = userZipCodeET.getText().toString();
+               String phoneNumberET = userPhoneNumberET.getText().toString();
 
-               //setText to TextView from EditText
                userFirstNameTV.setText(firstNameET);
                userLastNameTV.setText(lastNameET);
+               userStreetAddressTV.setText(streetAddressET);
+               userZipCodeTV.setText(zipCodeET);
+               userPhoneNumberTV.setText(phoneNumberET);
 
                 HashMap hashMap = new HashMap();
                 hashMap.put("firstName", firstNameET);
                 hashMap.put("lastName", lastNameET);
-
+                hashMap.put("streetAddress", streetAddressET);
+                hashMap.put("zipCode", zipCodeET);
+                hashMap.put("phoneNumber", phoneNumberET);
 
                databaseReference.child(userID).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
                    @Override

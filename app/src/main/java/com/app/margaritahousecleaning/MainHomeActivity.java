@@ -12,9 +12,6 @@ import androidx.navigation.ui.NavigationUI;
 
 public class MainHomeActivity extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigationView;
-    NavController navController;
-    NavigationUI navigationUI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

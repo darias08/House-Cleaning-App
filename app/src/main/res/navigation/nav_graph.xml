@@ -24,6 +24,9 @@
             app:destination="@id/scheduleUserFragment2"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_scheduleUserBookedFragment"
+            app:destination="@id/scheduleUserBookedFragment" />
     </fragment>
     <fragment
         android:id="@+id/scheduleFragment"
@@ -55,11 +58,6 @@
         android:label="LocationFragment"
         tools:layout="@layout/fragment_location">
         <action
-            android:id="@+id/action_locationFragment_to_scheduleFragment"
-            app:destination="@id/scheduleFragment"
-            app:enterAnim="@anim/slide_in_left"
-            app:exitAnim="@anim/slide_out_right" />
-        <action
             android:id="@+id/action_locationFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:enterAnim="@anim/slide_in_left"
@@ -71,6 +69,11 @@
             app:exitAnim="@anim/slide_out_left" />
         <action
             android:id="@+id/action_locationFragment_to_scheduleUserFragment2"
+            app:destination="@id/scheduleUserFragment2"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_locationFragment_to_scheduleUserFragment22"
             app:destination="@id/scheduleUserFragment2"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
@@ -119,7 +122,6 @@
     </fragment>
     <fragment
         android:id="@+id/scheduleFragment2"
-        android:name="com.app.margaritahousecleaning.ScheduleFragment2"
         android:label="ScheduleFragment2"
         tools:layout="@layout/fragment_schedule2">
         <action
@@ -161,13 +163,15 @@
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_scheduleUserFragment2_to_scheduleUserBookedFragment"
-            app:destination="@id/scheduleUserBookedFragment" />
-        <action
             android:id="@+id/action_scheduleUserFragment2_to_locationFragment"
             app:destination="@id/locationFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_scheduleUserFragment2_to_scheduleUserBookedFragment"
+            app:destination="@id/scheduleUserBookedFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out_slower" />
     </fragment>
     <fragment
         android:id="@+id/scheduleUserBookedFragment"
@@ -177,6 +181,20 @@
         <action
             android:id="@+id/action_scheduleUserBookedFragment_to_homeFragment"
             app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_scheduleUserBookedFragment_to_notificationUpcomingFragment"
+            app:destination="@id/notificationUpcomingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationUpcomingFragment"
+        android:name="com.app.margaritahousecleaning.NotificationUpcomingFragment"
+        android:label="NotificationUpcomingFragment"
+        tools:layout="@layout/fragment_notification_upcoming">
+        <action
+            android:id="@+id/action_notificationUpcomingFragment_to_scheduleUserBookedFragment"
+            app:destination="@id/scheduleUserBookedFragment"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
     </fragment>

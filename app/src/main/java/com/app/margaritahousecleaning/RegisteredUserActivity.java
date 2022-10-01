@@ -170,8 +170,6 @@ public class RegisteredUserActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             UserProfile userProfile = new UserProfile(firstName, lastName, streetAddress, zipCode, phoneNumber, email, password);
 
-                            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
                             FirebaseDatabase.getInstance().getReference("Registered Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(userProfile).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -183,7 +181,6 @@ public class RegisteredUserActivity extends AppCompatActivity {
                                                 Toast.makeText(RegisteredUserActivity.this, "Successfully created account!", Toast.LENGTH_LONG).show();
                                                 startActivity(new Intent(RegisteredUserActivity.this, LoginActivity.class));
                                                 progressBar.setVisibility(View.GONE);
-
 
                                             } else {
                                                 Toast.makeText(RegisteredUserActivity.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();

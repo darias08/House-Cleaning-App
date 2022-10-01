@@ -4,7 +4,6 @@
     package="com.app.margaritahousecleaning">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
 
     <application
@@ -17,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MargaritaHouseCleaning"
         tools:targetApi="31">
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -27,6 +29,8 @@
             android:exported="false" />
         <activity
             android:name=".RegisteredUserActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".ForgotPasswordActivity"

@@ -1,33 +1,39 @@
 package com.app.margaritahousecleaning;
 
-import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 public class UserAppointment {
 
-    public String date_picked, time_picked, address, zipcode, residentialCheckBox, officeCheckBox;
+    public String datePicked, timePicked, phoneNumber, address, zipcode, residentialCheckBox, officeCheckBox, bathroomCheckBox, carpetCheckBox;
+
 
     //Constructor
-    public UserAppointment(String dateET, String timeET, String addressTV, String zipcodeTV) {
-        this.date_picked = dateET;
-        this.time_picked = timeET;
+    public UserAppointment(String date_picked, String time_picked, String addressTV, String zipcodeTV, String phoneNumber) {
+        this.datePicked = date_picked;
+        this.timePicked = time_picked;
         this.address = addressTV;
         this.zipcode = zipcodeTV;
+        this.phoneNumber = phoneNumber;
     }
 
-    //Using getter/setters method
-    public String getResidentialCheckBox() {
-        return residentialCheckBox;
+    UserAppointment () {
+
     }
 
+    //Setters method
     public void setResidentialCheckBox(String residentialCheckBox) {
         this.residentialCheckBox = residentialCheckBox;
     }
 
-    public String getOfficeCheckBox() {
-        return officeCheckBox;
-    }
-
     public void setOfficeCheckBox(String officeCheckBox) {
         this.officeCheckBox = officeCheckBox;
+    }
+
+
+    public void setBathroomCheckBox(String bathroomCheckBox) {
+        this.bathroomCheckBox = bathroomCheckBox;
+    }
+
+    public void setCarpetCheckBox(String carpetCheckBox) {
+        this.carpetCheckBox = carpetCheckBox;
     }
 }

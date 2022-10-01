@@ -131,6 +131,7 @@ public class LoginUserActivity extends AppCompatActivity {
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                             if (user.isEmailVerified()) {
                                 startActivity(new Intent(LoginUserActivity.this.getApplicationContext(), MainHomeActivity.class));
+                                Toast.makeText(getApplicationContext(), "You have signed in.", Toast.LENGTH_SHORT).show();
                                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                                 progressBar2.setVisibility(View.VISIBLE);
                             }

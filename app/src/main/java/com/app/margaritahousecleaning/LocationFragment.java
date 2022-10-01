@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -56,6 +57,7 @@ public class LocationFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_location, container, false);
 
+
         bottomNavigationView = (BottomNavigationView)v.findViewById(bottom_navigation);
         bottomNavigationView.getMenu().findItem(R.id.locationFragment).setChecked(true);
 
@@ -63,7 +65,8 @@ public class LocationFragment extends Fragment {
         bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_locationFragment_to_scheduleUserFragment2);
+
+                Navigation.findNavController(view).navigate(R.id.action_locationFragment_to_scheduleUserFragment22);
             }
         });
 
@@ -82,7 +85,6 @@ public class LocationFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_locationFragment_to_settingsFragment);
             }
         });
-
 
 
         return v;
