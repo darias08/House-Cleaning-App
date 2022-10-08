@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scheduleUserContainer"
+    android:background="@color/Dark_Grey"
+    android:scrollbars="none"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/Book_Appointment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Book Appointment"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline7"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5" />
+
+                <ImageView
+                    android:id="@+id/Notification"
+                    android:layout_width="36dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginBottom="12dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline7"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/Book_Appointment"
+                    app:srcCompat="@drawable/ic_baseline_notifications_24" />
+
+                <TextView
+                    android:id="@+id/timeSelectionText"
+                    android:layout_width="131dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="28dp"
+                    android:text="Select a time:"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="16sp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.975"
+                    app:layout_constraintStart_toEndOf="@+id/DateSelectionText"
+                    app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+                <EditText
+                    android:id="@+id/timeET"
+                    android:layout_width="153dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/background_calendar"
+                    android:enabled="true"
+                    android:focusable="false"
+                    android:hint="00:00"
+                    android:paddingLeft="25dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#EAEAEA"
+                    android:textSize="16sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline13"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.851"
+                    app:layout_constraintStart_toEndOf="@+id/date"
+                    app:layout_constraintTop_toBottomOf="@+id/timeSelectionText" />
+
+                <TextView
+                    android:id="@+id/DateSelectionText"
+                    android:layout_width="131dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="212dp"
+                    android:text="Select a date:"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+                <EditText
+                    android:id="@+id/date"
+                    android:layout_width="163dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="152dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/background_calendar"
+                    android:enabled="true"
+                    android:focusable="false"
+                    android:hint="mm/dd/yyyy"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#EAEAEA"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline13"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/DateSelectionText" />
+
+                <ImageView
+                    android:id="@+id/calendarImage"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/calendar_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/date"
+                    app:layout_constraintEnd_toEndOf="@+id/date"
+                    app:layout_constraintHorizontal_bias="0.924"
+                    app:layout_constraintStart_toStartOf="@+id/date"
+                    app:layout_constraintTop_toTopOf="@+id/date"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/timeIcon"
+                    android:layout_width="22dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="95dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/timeET"
+                    app:layout_constraintEnd_toEndOf="@+id/timeET"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/timeET"
+                    app:layout_constraintTop_toTopOf="@+id/timeET"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/schedule_time" />
+
+
+                <TextView
+                    android:id="@+id/UserAppointmentLocation"
+                    android:layout_width="245dp"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Your appointment location:"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="16sp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/guideline13" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.79" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.26" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.48" />
+
+                <TextView
+                    android:id="@+id/tvRFA"
+                    android:layout_width="193dp"
+                    android:layout_height="26dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Reason for appointment:"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="16sp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/guideline15" />
+
+                <LinearLayout
+                    android:id="@+id/backgroundView2"
+                    android:layout_width="351dp"
+                    android:layout_height="118dp"
+                    android:background="@drawable/background_calendar"
+                    android:orientation="horizontal"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline15"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/UserAppointmentLocation">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/userAddressInfo"
+                            android:layout_width="200dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:gravity="center"
+                            android:inputType="text"
+                            android:scaleType="centerCrop"
+                            android:textColor="@color/white"
+                            android:textColorHint="#80FFFFFF"
+                            android:textSize="14sp"
+                            android:visibility="invisible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/userAddress1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/underlineAddress"
+                            android:layout_width="192dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="3dp"
+                            android:background="#737373"
+                            android:visibility="invisible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.777"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/userAddressInfo" />
+
+                        <TextView
+                            android:id="@+id/userAddress1"
+                            android:layout_width="70dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Address:"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:visibility="invisible"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/userZipCode1"
+                            android:layout_width="73dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="12dp"
+                            android:gravity="center"
+                            android:text="Zip Code: "
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:visibility="invisible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/userAddress1"
+                            app:layout_constraintVertical_bias="0.585" />
+
+                        <TextView
+                            android:id="@+id/userZipCodeInfo1"
+                            android:layout_width="81dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="84dp"
+                            android:layout_marginTop="16dp"
+                            android:gravity="center"
+                            android:inputType="text"
+                            android:scaleType="centerCrop"
+                            android:textColor="@color/white"
+                            android:textColorHint="#80FFFFFF"
+                            android:textSize="14sp"
+                            android:visibility="invisible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/userZipCode1"
+                            app:layout_constraintTop_toBottomOf="@+id/underlineAddress" />
+
+                        <View
+                            android:id="@+id/underlineZipCode"
+                            android:layout_width="192dp"
+                            android:layout_height="2dp"
+                            android:background="#737373"
+                            android:visibility="invisible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.765"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/userZipCodeInfo1"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/questionMark"
+                    android:layout_width="20dp"
+                    android:layout_height="18dp"
+                    android:enabled="true"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/UserAppointmentLocation"
+                    app:layout_constraintEnd_toEndOf="@+id/UserAppointmentLocation"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/UserAppointmentLocation"
+                    app:srcCompat="@drawable/ic_vector" />
+
+
+                <EditText
+                    android:id="@+id/etRFA"
+                    android:layout_width="356dp"
+                    android:layout_height="164dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/background_calendar"
+                    android:ems="10"
+                    android:gravity="top|start"
+                    android:hint="Please type here..."
+                    android:inputType="textMultiLine"
+                    android:lines="15"
+                    android:maxLines="15"
+                    android:minLines="6"
+                    android:padding="15dp"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/gray"
+                    android:textSize="16sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline16"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRFA" />
+
+                <Button
+                    android:id="@+id/bookBtn"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:padding="10dp"
+                    android:text="Book"
+                    android:theme="@style/AppBottomSheetDialogTheme"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/guideline16" />
+
+                <LinearLayout
+                    android:id="@+id/BottomNavBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.bottomnavigation.BottomNavigationView
+                        android:id="@+id/bottom_navigation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/roundedcorner2"
+                        app:menu="@menu/nav_menu">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_begin="779dp" />
+                    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/progressBarData"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:background="#80000000"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:id="@+id/progressBar2"
+                            style="?android:attr/progressBarStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/userPhoneNum"
+                            android:layout_width="110dp"
+                            android:layout_height="19dp"
+                            android:layout_centerHorizontal="true"
+                            android:visibility="invisible"
+                            tools:ignore="MissingConstraints"
+                            tools:layout_editor_absoluteX="151dp"
+                            tools:layout_editor_absoluteY="12dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/checkComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#80000000"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:layout_width="208dp"
+                            android:layout_height="157dp"
+                            android:src="@drawable/tenor"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.13" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.9" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

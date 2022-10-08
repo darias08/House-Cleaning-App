@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:layout_gravity="center" android:orientation="vertical"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="369dp"
+        android:layout_height="184dp"
+        android:background="@drawable/background_data"
+        android:padding="25dp">
+
+        <ProgressBar
+            android:id="@+id/custom_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="39dp"
+            android:layout_height="41dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="47dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.685" />
+
+        <TextView
+            android:id="@+id/textInfo"
+            android:layout_width="229dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="16dp"
+            android:text="Please wait, while your appointment is being booked."
+            android:textColor="#80FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.792" />
+
+        <TextView
+            android:id="@+id/StoringDataComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Booking your appointment"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/BookComplete"
+            android:layout_width="147dp"
+            android:layout_height="111dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="14dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/custom_progressBar"
+            app:layout_constraintEnd_toEndOf="@+id/custom_progressBar"
+            app:layout_constraintStart_toStartOf="@+id/custom_progressBar"
+            app:layout_constraintTop_toTopOf="@+id/custom_progressBar">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/checkComplete"
+                android:layout_width="147dp"
+                android:layout_height="112dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/tenor" />
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
+

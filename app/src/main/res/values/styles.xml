@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+
+        <!--
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        -->
+    </style>
+
+    <style name="Theme_DeviceDefault_Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/redStatusBarColor</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="srp_button" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/btn_selector</item>
+    </style>
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlActivated">@color/redStatusBarColor</item>
+    </style>
+
+
+    <style name="AppTheme.NavigationView">
+        <item name="android:textColorSecondary">@color/nav_color</item>
+        <item name="android:listDivider">@color/transparentWhite</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="dialogstyle" parent="@android:style/Theme.Holo.Light.Panel">
+        <item name="colorPrimary">@color/redStatusBarColor</item>
+        <item name="android:windowAnimationStyle">@style/animations</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="animations">
+        <item name="android:windowEnterAnimation">@anim/slide_out_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_in_right</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/gray</item>
+        <item name="android:textColorLink">@color/redStatusBarColor</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+
+</resources>
