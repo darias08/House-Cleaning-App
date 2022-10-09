@@ -93,12 +93,10 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text=" • Remove webs. "
 
                 android:textColor="@color/transparentWhite"
-                app:layout_constraintEnd_toStartOf="@+id/guideline18"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline12"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -107,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text=" • Empty Trash"
                 android:textColor="@color/transparentWhite"
                 app:layout_constraintEnd_toStartOf="@+id/guideline18"
@@ -120,7 +118,7 @@
                 android:layout_width="134dp"
                 android:layout_height="36dp"
 
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="32dp"
                 android:text=" • Sweep and Mop all floors "
                 android:textColor="@color/transparentWhite"
                 app:layout_constraintEnd_toStartOf="@+id/guideline18"
@@ -129,7 +127,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/roomsText" />
 
             <ImageView
-                android:id="@+id/imageVieew1"
+                android:id="@+id/houseImg1"
                 android:layout_width="176dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -139,20 +137,19 @@
                 app:srcCompat="@drawable/house_image1" />
 
             <ImageView
-                android:id="@+id/imageVieew3"
+                android:id="@+id/houseImg3"
                 android:layout_width="176dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
                 android:layout_marginTop="24dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageVieew1"
+                app:layout_constraintTop_toBottomOf="@+id/houseImg1"
                 app:srcCompat="@drawable/house_image3" />
 
             <ImageView
-                android:id="@+id/imageVieew2"
+                android:id="@+id/houseImg2"
                 android:layout_width="176dp"
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="32dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline18"
                 app:layout_constraintTop_toBottomOf="@+id/textGallery"
@@ -162,7 +159,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
 
                 android:text=" • Vaccum carpets."
                 android:textColor="@color/transparentWhite"
@@ -176,7 +173,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text=" • Vaccum furniture. "
                 android:textColor="@color/transparentWhite"
                 app:layout_constraintEnd_toStartOf="@+id/guideline18"
@@ -189,7 +186,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
                 android:text=" • Change Sheets."
                 android:textColor="@color/transparentWhite"
@@ -226,7 +223,7 @@
                 android:id="@+id/textView17"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text=" • Clean sliding glass doors."
 
                 android:textColor="@color/transparentWhite"
@@ -237,7 +234,7 @@
                 android:id="@+id/textView18"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text=" • Clean microwave over inside and out.  "
 
                 android:textColor="@color/transparentWhite"
@@ -260,7 +257,7 @@
                 android:id="@+id/textView20"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text=" • Clean and sanitize counter tops and back splashes. "
 
                 android:textColor="@color/transparentWhite"
@@ -273,7 +270,7 @@
                 android:id="@+id/textView21"
                 android:layout_width="196dp"
                 android:layout_height="39dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text=" • Clean scrub and sanitize sinks."
 
                 android:textColor="@color/transparentWhite"
@@ -334,7 +331,7 @@
                 android:id="@+id/textView23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
 
                 android:layout_marginEnd="212dp"
                 android:text=" • Clean mirrors"
@@ -362,20 +359,17 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
                 android:text=" • Clean and sanitize vanities, backsplashes and toilets."
                 android:textColor="@color/transparentWhite"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline12"
-                app:layout_constraintTop_toBottomOf="@+id/textView24"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
             <TextView
                 android:id="@+id/textView26"
                 android:layout_width="128dp"
                 android:layout_height="37dp"
 
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="4dp"
                 android:text=" • Wash floors and tile walls. "
                 android:textColor="@color/transparentWhite"
@@ -387,23 +381,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="21dp"
-                android:layout_marginEnd="44dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="56dp"
                 android:text=" • Deodorize"
                 android:textColor="@color/transparentWhite"
                 app:layout_constraintEnd_toStartOf="@+id/guideline18"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView26"
                 app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
             <ImageView
                 android:id="@+id/imageView11"
-                android:layout_width="381dp"
-                android:layout_height="183dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="360dp"
+                android:layout_height="182dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline18"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline12"
                 app:layout_constraintTop_toBottomOf="@+id/houseCleaningTitle"
                 app:srcCompat="@drawable/house_pic" />
 
@@ -416,7 +407,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+                app:layout_constraintTop_toBottomOf="@+id/houseImg5" />
 
             <TextView
                 android:id="@+id/textGallery"
@@ -432,127 +423,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
             <ImageView
-                android:id="@+id/imageView10"
+                android:id="@+id/houseImg4"
                 android:layout_width="176dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline18"
-                app:layout_constraintTop_toBottomOf="@+id/imageVieew2"
+                app:layout_constraintTop_toBottomOf="@+id/houseImg2"
                 app:srcCompat="@drawable/house_image4" />
 
             <ImageView
-                android:id="@+id/imageView13"
+                android:id="@+id/houseImg5"
                 android:layout_width="176dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 app:layout_constraintStart_toStartOf="@+id/guideline12"
-                app:layout_constraintTop_toBottomOf="@+id/imageVieew3"
+                app:layout_constraintTop_toBottomOf="@+id/houseImg3"
                 app:srcCompat="@drawable/house_image5" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </RelativeLayout>
 
-
-<!--
-
-
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/SettingsFragmentXML"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/Dark_Grey"
-    tools:context=".MainActivity">
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="0dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="393dp"
-                app:layout_constraintGuide_percent="0.95" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.05" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/houseCleaningTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="House Cleaning:"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/guideline18"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guideline12"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/roomsText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="All Rooms"
-                android:textColor="#C60D0D"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline18"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guideline12"
-                app:layout_constraintTop_toBottomOf="@+id/houseCleaningTitle" />
-
-            <ListView
-                android:id="@+id/listv"
-                android:layout_width="290dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline18"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guideline12"
-                app:layout_constraintTop_toBottomOf="@+id/roomsText" >
-
-
-            </ListView>
-
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-</RelativeLayout>
-
--->

@@ -23,7 +23,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements MyDrawerController  {
 
     private AppBarConfiguration mAppBarConfiguration;
     private DrawerLayout drawerLayout;
@@ -43,10 +43,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         drawerLayout = findViewById(R.id.drawer_layout);
-        setNavigationViewListener();
 
-
+        //Navigating through fragments within Navigaton Drawer.
         navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_location: {
+                        Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_content_main).navigate(R.id.action_nav_home_to_nav_location_action);
+                        break;
+                    }
+                    case R.id.nav_services: {
+                        Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_content_main).navigate(R.id.action_nav_home_to_servicesFragment);
+                        break;
+                    }
+                    case R.id.nav_logout: {
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                        Toast.makeText(MainActivity.this, "You have successfully logged out!", Toast.LENGTH_LONG).show();
+                        finish();
+                        break;
+                    }
+                }
+
+
+                //closing drawer once user has selected a item.
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
 
 
         // Passing each menu ID as a set of Ids because each
@@ -60,45 +86,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    //hello
-
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    //Navigating through fragments within Navigaton Drawer.
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.nav_location: {
-                Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_content_main).navigate(R.id.action_nav_home_to_nav_location_action);
-                break;
-            }
-            case R.id.nav_services: {
-                Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_content_main).navigate(R.id.action_nav_home_to_servicesFragment);
-                break;
-            }
-            case R.id.nav_logout: {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                Toast.makeText(MainActivity.this, "You have successfully logged out!", Toast.LENGTH_LONG).show();
-                finish();
-                break;
-            }
-        }
-
-
-        //closing drawer once user has selected a item.
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    private void setNavigationViewListener() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
     }
 
     //User can't return back to login page.
@@ -107,4 +99,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         moveTaskToBack(true);
     }
 
+    @Override
+    public void setDrawer_Locked() {
+        // ======= Code to lock drawer ============
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+    }
+
+    @Override
+    public void setDrawer_Unlocked() {
+        // ======= Code to unlock drawer ============
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+
+    }
 }

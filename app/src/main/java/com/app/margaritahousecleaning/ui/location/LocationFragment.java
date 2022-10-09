@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.app.margaritahousecleaning.MainActivity;
 import com.app.margaritahousecleaning.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -49,8 +50,13 @@ public class LocationFragment extends Fragment {
             }
         });
 
+        //Lock navigation drawer
+        ((MainActivity)getActivity()).setDrawer_Locked();
+
         return v;
     }
+
+
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
@@ -71,5 +77,18 @@ public class LocationFragment extends Fragment {
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setHomeButtonEnabled(false);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
     }
 }

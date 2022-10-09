@@ -5,7 +5,6 @@ plugins {
 
 android {
     compileSdk 32
-
     defaultConfig {
         applicationId "com.app.margaritahousecleaning"
         minSdk 23
@@ -22,6 +21,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/content/popups',
+                            'src/main/res/content/fragments',
+                            'src/main/res/content/activities',
+                            'src/main/res/content',
+                            'src/main/res'
+                    ]
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -29,6 +42,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+
+
 }
 
 dependencies {

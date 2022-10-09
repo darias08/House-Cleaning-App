@@ -48,7 +48,53 @@
     </fragment>
     <fragment
         android:id="@+id/servicesFragment"
-        android:name="com.app.margaritahousecleaning.ui.services.ServicesFragment"
+        android:name="com.app.margaritahousecleaning.ui.services.ServicesFragment_houseTab"
         android:label="ServicesFragment"
-        tools:layout="@layout/fragment_services"/>
+        tools:layout="@layout/fragment_services">
+        <action
+            android:id="@+id/action_servicesFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out_slower" />
+        <action
+            android:id="@+id/action_servicesFragment_to_servicesFragment_commercialTab"
+            app:destination="@id/servicesFragment_commercialTab" />
+        <action
+            android:id="@+id/action_servicesFragment_to_servicesFragment_miscTab"
+            app:destination="@id/servicesFragment_miscTab" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesFragment_commercialTab"
+        android:name="com.app.margaritahousecleaning.ui.services.ServicesFragment_commercialTab"
+        android:label="ServicesFragment_commercialTab"
+        tools:layout="@layout/commercial_cleaning">
+        <action
+            android:id="@+id/action_servicesFragment_commercialTab_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_servicesFragment_commercialTab_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_servicesFragment_commercialTab_to_servicesFragment_miscTab"
+            app:destination="@id/servicesFragment_miscTab" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesFragment_miscTab"
+        android:name="com.app.margaritahousecleaning.ui.services.ServicesFragment_miscTab"
+        android:label="ServicesFragment_miscTab"
+        tools:layout="@layout/misc_cleaning">
+        <action
+            android:id="@+id/action_servicesFragment_miscTab_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_servicesFragment_miscTab_to_servicesFragment_commercialTab"
+            app:destination="@id/servicesFragment_commercialTab" />
+        <action
+            android:id="@+id/action_servicesFragment_miscTab_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out_slower" />
+    </fragment>
 </navigation>

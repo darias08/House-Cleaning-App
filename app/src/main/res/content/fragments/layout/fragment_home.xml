@@ -88,11 +88,11 @@
 
                 <TextView
                     android:id="@+id/text_input8"
-                    android:layout_width="337dp"
-                    android:layout_height="71dp"
+                    android:layout_width="295dp"
+                    android:layout_height="77dp"
                     android:layout_marginTop="24dp"
                     android:gravity="center"
-                    android:text="Click on the button below to see where our office located as well as our business hours."
+                    android:text="Check out where our office is located as well as our business hours."
                     android:textColor="#80FFFFFF"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -251,26 +251,26 @@
                     android:id="@+id/divider3"
                     android:layout_width="0dp"
                     android:layout_height="1dp"
-                    android:layout_marginTop="45dp"
+                    android:layout_marginTop="32dp"
                     android:background="@drawable/line_shape"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView22" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
                 <TextView
                     android:id="@+id/commericalTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="48dp"
                     android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
                     android:text="Commerical Cleaning"
                     android:textColor="@color/login_color"
                     android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView11"
                     app:layout_constraintEnd_toStartOf="@+id/guideline10"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textView11"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                    app:layout_constraintStart_toStartOf="@+id/textView11" />
 
                 <View
                     android:id="@+id/divider4"
@@ -287,13 +287,14 @@
                     android:id="@+id/textView11"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="40dp"
                     android:text="Make sure your business gives customers the right message.  "
                     android:textColor="@color/transparentWhite"
                     android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/commericalTxt2"
                     app:layout_constraintEnd_toStartOf="@+id/guideline10"
-                    app:layout_constraintTop_toBottomOf="@+id/commericalTxt" />
+                    app:layout_constraintStart_toStartOf="@+id/commericalTxt2" />
 
                 <Button
                     android:id="@+id/button_input3"
@@ -328,11 +329,11 @@
 
                 <TextView
                     android:id="@+id/text_input"
-                    android:layout_width="346dp"
-                    android:layout_height="75dp"
+                    android:layout_width="284dp"
+                    android:layout_height="78dp"
                     android:layout_marginTop="24dp"
                     android:gravity="center_horizontal"
-                    android:text="Click on the button below to schedule an appointment and meet with a representative to get an estimate for your cleaning service."
+                    android:text="Schedule an appointment and see what will your estimate be for your service cleaning."
                     android:textColor="#80FFFFFF"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -347,7 +348,7 @@
                     android:layout_marginTop="24dp"
                     android:text="Welcome To"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="23dp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@+id/guideline10"
                     app:layout_constraintStart_toStartOf="@+id/guideline8"
@@ -357,27 +358,42 @@
                     android:id="@+id/commericalTxt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="44dp"
                     android:layout_marginEnd="28dp"
+                    android:layout_marginBottom="8dp"
                     android:text="Office Cleaning"
                     android:textColor="@color/login_color"
                     android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView12"
                     app:layout_constraintEnd_toStartOf="@+id/guideline10"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textView12"
-                    app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                    app:layout_constraintStart_toStartOf="@+id/textView12" />
 
                 <TextView
                     android:id="@+id/textView12"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="36dp"
                     android:text="No job or job site is too dirty for our professional staff."
                     android:textColor="@color/transparentWhite"
                     android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/miscText"
                     app:layout_constraintEnd_toStartOf="@+id/guideline10"
-                    app:layout_constraintTop_toBottomOf="@+id/commericalTxt2" />
+                    app:layout_constraintStart_toStartOf="@+id/miscText" />
+
+                <TextView
+                    android:id="@+id/miscText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Miscellanous Cleaning"
+                    android:textColor="@color/login_color"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView34"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/textView34" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -386,7 +402,7 @@
                     android:layout_centerHorizontal="true"
                     android:text="Margarita's House Cleaning"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="23dp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -399,17 +415,29 @@
                     android:layout_centerHorizontal="true"
                     android:text="Inc And Janitorial Service!"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="23dp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="39dp"
+                    android:text="We also provide other special types of cleaning service to your needs."
+                    android:textColor="@color/transparentWhite"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/divider3"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline10" />
+
                 <ImageView
                     android:id="@+id/houseImage"
                     android:layout_width="146dp"
                     android:layout_height="98dp"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="32dp"
                     app:layout_constraintStart_toStartOf="@+id/guideline8"
                     app:layout_constraintTop_toBottomOf="@+id/ourServices"
                     app:srcCompat="@drawable/house_image" />
@@ -418,7 +446,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="45dp"
                     android:text="Residential Cleaning"
                     android:textColor="@color/login_color"
                     android:textSize="16sp"
@@ -431,13 +459,26 @@
                     android:id="@+id/textView8"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="56dp"
                     android:text="Keep your place spick-and-span spotless!"
                     android:textColor="@color/transparentWhite"
                     android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/commericalTxt"
                     app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                    app:layout_constraintStart_toStartOf="@+id/commericalTxt"
                     app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="146dp"
+                    android:layout_height="98dp"
+                    android:layout_marginTop="24dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView22"
+                    app:srcCompat="@drawable/misc_image1" />
 
                 <ImageView
                     android:id="@+id/imageView21"

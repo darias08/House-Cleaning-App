@@ -168,7 +168,7 @@
         android:id="@+id/googleAccountBtn"
         android:layout_width="141dp"
         android:layout_height="37dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/google_background"
         android:drawableStart="@drawable/ic_google"
         android:paddingLeft="15dp"
