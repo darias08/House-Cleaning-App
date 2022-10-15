@@ -18,7 +18,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        //Hide Action bar
         getSupportActionBar().hide();
         setContentView(R.layout.activity_splash_screen);
 
@@ -26,7 +25,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //Change status bar color
-        getWindow().setStatusBarColor(ContextCompat.getColor(SplashScreenActivity.this, R.color.redStatusBarColor));
+        getWindow().setStatusBarColor(ContextCompat.getColor(SplashScreenActivity.this, R.color.Dark_Grey));
 
         new Handler().postDelayed(new Runnable() {
             @Override

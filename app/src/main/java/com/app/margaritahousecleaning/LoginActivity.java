@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         getSupportActionBar().hide();
-        getWindow().setStatusBarColor(ContextCompat.getColor(LoginActivity.this, R.color.redStatusBarColor));
+        getWindow().setStatusBarColor(ContextCompat.getColor(LoginActivity.this, R.color.Dark_Grey));
         setContentView(R.layout.activity_login);
 
 

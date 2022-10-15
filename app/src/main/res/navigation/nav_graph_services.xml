@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/servicesFragment_houseTab">
+    <fragment
+        android:id="@+id/servicesFragment_houseTab"
+        android:name="com.app.margaritahousecleaning.ui.services.ServicesFragment_residentialTab"
+        android:label="ServicesFragment_houseTab"
+        tools:layout="@layout/fragment_residential">
+        <action
+            android:id="@+id/action_servicesFragment_houseTab_to_servicesFragment_commercialTab"
+            app:destination="@id/servicesFragment_commercialTab" />
+        <action
+            android:id="@+id/action_servicesFragment_houseTab_to_servicesFragment_miscTab"
+            app:destination="@id/servicesFragment_miscTab" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesFragment_commercialTab"
+        android:name="com.app.margaritahousecleaning.ui.services.ServicesFragment_commercialTab"
+        android:label="ServicesFragment_commercialTab"
+        tools:layout="@layout/fragment_commercial">
+        <action
+            android:id="@+id/action_servicesFragment_commercialTab_to_servicesFragment_houseTab"
+            app:destination="@id/servicesFragment_houseTab" />
+        <action
+            android:id="@+id/action_servicesFragment_commercialTab_to_servicesFragment_miscTab"
+            app:destination="@id/servicesFragment_miscTab" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesFragment_miscTab"
+        android:name="com.app.margaritahousecleaning.ui.services.ServicesFragment_miscTab"
+        android:label="ServicesFragment_miscTab"
+        tools:layout="@layout/fragment_misc">
+        <action
+            android:id="@+id/action_servicesFragment_miscTab_to_servicesFragment_commercialTab"
+            app:destination="@id/servicesFragment_commercialTab" />
+        <action
+            android:id="@+id/action_servicesFragment_miscTab_to_servicesFragment_houseTab"
+            app:destination="@id/servicesFragment_houseTab" />
+    </fragment>
+</navigation>

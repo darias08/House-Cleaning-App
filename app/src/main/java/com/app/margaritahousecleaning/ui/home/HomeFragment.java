@@ -1,25 +1,20 @@
 package com.app.margaritahousecleaning.ui.home;
 
 import static com.app.margaritahousecleaning.R.id.bottom_navigation;
-import static com.app.margaritahousecleaning.R.id.homeFragment;
+import static com.app.margaritahousecleaning.R.id.nav_notification;
+import static com.app.margaritahousecleaning.R.id.nav_settings;
+
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import com.app.margaritahousecleaning.MainActivity;
 import com.app.margaritahousecleaning.R;
-import com.app.margaritahousecleaning.databinding.FragmentHomeBinding;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
@@ -32,11 +27,11 @@ public class HomeFragment extends Fragment {
 
     private ImageSlider imageSlider;
     private BottomNavigationItemView bottomNavigationItemView;
+    private BottomNavigationView bottomNavigationView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-
 
         //Banner
         imageSlider = v.findViewById(R.id.imageSlider);
@@ -51,17 +46,32 @@ public class HomeFragment extends Fragment {
 
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
 
+
+
         //Navigating to schedule fragment.
-        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(R.id.scheduleFragment);
+        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(R.id.nav_schedule);
         bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_scheduleUserFragment1);
+                Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_scheduleUserFragment2);
             }
         });
 
+        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(nav_notification);
+        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_notificationUpcomingFragment);
+            }
+        });
 
-
+        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(nav_settings);
+        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_settingsFragment);
+            }
+        });
 
         return v;
     }

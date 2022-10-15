@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.margaritahousecleaning.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_scheduleUserFragment2"
+            app:destination="@id/scheduleUserFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationUpcomingFragment"
+            app:destination="@id/notificationUpcomingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleUserFragment2"
+        android:name="com.app.margaritahousecleaning.ScheduleUserFragment"
+        android:label="ScheduleUserFragment"
+        tools:layout="@layout/fragment_schedule_user">
+        <action
+            android:id="@+id/action_scheduleUserFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_scheduleUserFragment2_to_notificationUpcomingFragment"
+            app:destination="@id/notificationUpcomingFragment" />
+        <action
+            android:id="@+id/action_scheduleUserFragment2_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationUpcomingFragment"
+        android:name="com.app.margaritahousecleaning.NotificationUpcomingFragment"
+        android:label="NotificationUpcomingFragment"
+        tools:layout="@layout/fragment_notification_upcoming" >
+        <action
+            android:id="@+id/action_notificationUpcomingFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_notificationUpcomingFragment_to_scheduleUserFragment2"
+            app:destination="@id/scheduleUserFragment2" />
+        <action
+            android:id="@+id/notification_to_settings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.app.margaritahousecleaning.SettingsFragmentTest"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings_test">
+        <action
+            android:id="@+id/action_settingsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_scheduleUserFragment2"
+            app:destination="@id/scheduleUserFragment2" />
+        <action
+            android:id="@+id/action_settingsFragment_to_notificationUpcomingFragment"
+            app:destination="@id/notificationUpcomingFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_servicesFragment_residentialTab"
+            app:destination="@id/servicesFragment_residentialTab"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_settingsFragment_to_locationFragment"
+            app:destination="@id/locationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_settingsFragment_to_aboutPageFragment"
+            app:destination="@id/aboutPageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_settingsFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_bottom1"
+            app:exitAnim="@anim/slide_out_top1" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesFragment_residentialTab"
+        android:name="com.app.margaritahousecleaning.ui.services.ServicesFragment_residentialTab"
+        android:label="ServicesFragment_residentialTab"
+        tools:layout="@layout/fragment_residential">
+        <action
+            android:id="@+id/action_servicesFragment_residentialTab_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_servicesFragment_residentialTab_to_servicesFragment_commercialTab2"
+            app:destination="@id/servicesFragment_commercialTab2" />
+        <action
+            android:id="@+id/action_servicesFragment_residentialTab_to_servicesFragment_miscTab2"
+            app:destination="@id/servicesFragment_miscTab2" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesFragment_commercialTab2"
+        android:name="com.app.margaritahousecleaning.ui.services.ServicesFragment_commercialTab"
+        android:label="ServicesFragment_commercialTab"
+        tools:layout="@layout/fragment_commercial" >
+        <action
+            android:id="@+id/action_servicesFragment_commercialTab2_to_servicesFragment_residentialTab"
+            app:destination="@id/servicesFragment_residentialTab" />
+        <action
+            android:id="@+id/action_servicesFragment_commercialTab2_to_servicesFragment_miscTab2"
+            app:destination="@id/servicesFragment_miscTab2" />
+        <action
+            android:id="@+id/action_servicesFragment_commercialTab2_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesFragment_miscTab2"
+        android:name="com.app.margaritahousecleaning.ui.services.ServicesFragment_miscTab"
+        android:label="ServicesFragment_miscTab"
+        tools:layout="@layout/fragment_misc">
+        <action
+            android:id="@+id/action_servicesFragment_miscTab2_to_servicesFragment_commercialTab2"
+            app:destination="@id/servicesFragment_commercialTab2" />
+        <action
+            android:id="@+id/action_servicesFragment_miscTab2_to_servicesFragment_residentialTab"
+            app:destination="@id/servicesFragment_residentialTab" />
+        <action
+            android:id="@+id/action_servicesFragment_miscTab2_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.app.margaritahousecleaning.ui.location.LocationFragment"
+        android:label="LocationFragment"
+        tools:layout="@layout/fragment_location">
+        <action
+            android:id="@+id/action_locationFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutPageFragment"
+        android:name="com.app.margaritahousecleaning.ui.about.AboutPageFragment"
+        android:label="AboutPageFragment"
+        tools:layout="@layout/fragment_about">
+        <action
+            android:id="@+id/action_aboutPageFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.app.margaritahousecleaning.ui.profile.ProfileFragment"
+        android:label="ProfileActivity"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profileFragment_to_profileEditStreetAddress2"
+            app:destination="@id/profileEditStreetAddress2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_profileFragment_to_profileEditZipCode22"
+            app:destination="@id/profileEditZipCode2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_profileFragment_to_profileEditPhoneNumber22"
+            app:destination="@id/profileEditPhoneNumber2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_profileFragment_to_profileEditFullName"
+            app:destination="@id/profileEditFullName"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditStreetAddress2"
+        android:name="com.app.margaritahousecleaning.ui.profile.ProfileEditStreetAddress"
+        android:label="ProfileEditStreetAddress"
+        tools:layout="@layout/street_address_edit">
+        <action
+            android:id="@+id/action_profileEditStreetAddress2_to_profileFragment2"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditZipCode2"
+        android:name="com.app.margaritahousecleaning.ui.profile.ProfileEditZipCode"
+        android:label="ProfileEditZipCode"
+        tools:layout="@layout/zip_code_edit">
+        <action
+            android:id="@+id/action_profileEditZipCode2_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditPhoneNumber2"
+        android:name="com.app.margaritahousecleaning.ui.profile.ProfileEditPhoneNumber"
+        android:label="ProfileEditPhoneNumber"
+        tools:layout="@layout/phone_number_edit">
+        <action
+            android:id="@+id/action_profileEditPhoneNumber2_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditFullName"
+        android:name="com.app.margaritahousecleaning.ui.profile.ProfileEditFullName"
+        android:label="ProfileEditFullName"
+        tools:layout="@layout/full_name_edit">
+        <action
+            android:id="@+id/action_profileEditFullName_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>

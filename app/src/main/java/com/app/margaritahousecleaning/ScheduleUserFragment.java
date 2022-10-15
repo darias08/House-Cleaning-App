@@ -2,9 +2,11 @@ package com.app.margaritahousecleaning;
 
 import static com.app.margaritahousecleaning.R.id.RGroup;
 import static com.app.margaritahousecleaning.R.id.bottom_navigation;
-import static com.app.margaritahousecleaning.R.id.homeFragment;
-import static com.app.margaritahousecleaning.R.id.notificationFragment;
-import static com.app.margaritahousecleaning.R.id.userPhoneNum;
+import static com.app.margaritahousecleaning.R.id.nav_home;
+import static com.app.margaritahousecleaning.R.id.nav_notification;
+import static com.app.margaritahousecleaning.R.id.nav_settings;
+
+
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -26,10 +28,8 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -59,7 +59,6 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
     private DatabaseReference bookedAppointments;
     private FirebaseAuth mAuth;
     private String userID;
-    private BottomNavigationView bottomNavigationView;
     private BottomNavigationItemView bottomNavigationItemView;
     private DatePickerDialog datePickerDialog;
     private com.wdullaer.materialdatetimepicker.date.DatePickerDialog dpd;
@@ -70,7 +69,6 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
     private Button bookBtn, noBtn, yesBtn;
     private RadioButton RB_10am, RB_11am, RB_12pm, RB_1pm, RB_2pm, RB_3pm, RB_4pm, RB_5pm;
     private Dialog dialog;
-    private BottomNavigationView bottomNavigationView1;
     private int count = 0;
     private UserAppointment userAppointment;
     private int progressBarCounter = 5000;
@@ -118,7 +116,6 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
         RB_2pm = v.findViewById(R.id.RB_2pm);
         userAddress = v.findViewById(R.id.userAddress1);
         userZipCode = v.findViewById(R.id.userZipCode1);
-        userPhoneNumber = v.findViewById(userPhoneNum);
         userInputAddress = v.findViewById(R.id.userAddressInfo);
         userInputZipCode = v.findViewById(R.id.userZipCodeInfo1);
         underlineAddress = v.findViewById(R.id.underlineAddress);
@@ -127,7 +124,6 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
         tvRFA = v.findViewById(R.id.tvRFA);
         etRFA = v.findViewById(R.id.etRFA);
         bookBtn = v.findViewById(R.id.bookBtn);
-        bottomNavigationView1 = v.findViewById(bottom_navigation);
 
 
 
@@ -182,45 +178,47 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
             }
         });
 
-
-
-        //How to set bottom navigation Icon active.
-        bottomNavigationView = (BottomNavigationView) v.findViewById(bottom_navigation);
-        bottomNavigationView.getMenu().findItem(R.id.scheduleFragment).setChecked(true);
-
-        //Switching screens from navigation bar.
-        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(homeFragment);
-        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_scheduleUserFragment1_to_nav_home);
-            }
-        });
-
-
-        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(notificationFragment);
-        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Navigation.findNavController(view).navigate(R.id.action_scheduleUserFragment2_to_locationFragment);
-            }
-        });
-
-
         bookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showDialog3();
             }
         });
+
+        BottomNavigationView navigation = (BottomNavigationView) v.findViewById(R.id.bottom_navigation);
+        navigation.getMenu().findItem(R.id.nav_schedule).setChecked(true);
+
+        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(nav_home);
+        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_scheduleUserFragment2_to_homeFragment);
+            }
+        });
+
+
+
+        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(nav_notification);
+        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_scheduleUserFragment2_to_notificationUpcomingFragment);
+            }
+        });
+
+        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(nav_settings);
+        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Navigation.findNavController(view).navigate(R.id.action_scheduleUserFragment2_to_settingsFragment);
+            }
+        });
+
+
         return v;
     }
 
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
 
     public void showDialog() {
         Dialog dialog = new Dialog(getActivity());
@@ -352,6 +350,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
                         UserProfile userProfile = snapshot.getValue(UserProfile.class);
 
                         if (userProfile != null) {
+                            /*
                             String streetAddress = userProfile.streetAddress;
                             String zipCode = userProfile.zipCode;
                             String phoneNumber = userProfile.phoneNumber;
@@ -360,6 +359,8 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
                             userInputAddress.setText(streetAddress);
                             userInputZipCode.setText(zipCode);
                             userPhoneNumber.setText(phoneNumber);
+
+                             */
                         }
                     }
 
@@ -428,6 +429,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
 
             }
         });
+
     }
 
 
@@ -543,17 +545,7 @@ public class ScheduleUserFragment extends Fragment implements com.wdullaer.mater
     }
 
 
-    //Hiding action bar when user clicks on schedule and returns action bar when they return back to previous fragment.
-    @Override
-    public void onResume() {
-        super.onResume();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
-    }
-    @Override
-    public void onStop() {
-        super.onStop();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
-    }
+
 
 }
 

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Dark_Grey"
+    android:id="@+id/profile_container"
+    tools:context=".ui.profile.ProfileFragmentTest">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_s"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Dark_Grey"
+        android:paddingStart="15dp"
+        android:paddingEnd="25dp"
+        android:theme="@style/Theme.MargaritaHouseCleaning.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_profile"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/Dark_Grey"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:popupTheme="@style/Theme.MargaritaHouseCleaning.PopupOverlay"
+            app:theme="@style/ToolbarTheme"
+            app:title="Personal Info" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--User full name -->
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/background_settings"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="25dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="25dp">
+
+            <TextView
+                android:id="@+id/user_FullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="Full Name"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/right_arrow_name"
+                android:layout_width="29dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="185dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="44dp"
+                android:layout_toEndOf="@id/user_FullName"
+                android:src="@drawable/ic_arrow_forward" />
+
+            <TextView
+                android:id="@+id/userFullNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="58dp"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--User street address -->
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/background_settings"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="25dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="25dp">
+
+            <TextView
+                android:id="@+id/user_Address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="Street Address"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/right_arrow_address"
+                android:layout_width="29dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="44dp"
+                android:layout_toEndOf="@id/user_Address"
+                android:src="@drawable/ic_arrow_forward" />
+
+            <TextView
+                android:id="@+id/userStreetAddressTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="58dp"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--User zip code -->
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/background_settings"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="25dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="25dp">
+
+            <TextView
+                android:id="@+id/user_ZipCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="Zip Code"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/right_arrow_zipcode"
+                android:layout_width="29dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="185dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="44dp"
+                android:layout_toEndOf="@id/user_ZipCode"
+                android:src="@drawable/ic_arrow_forward" />
+
+            <TextView
+                android:id="@+id/userZipCodeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="58dp"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--User phone number -->
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/background_settings"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="25dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="25dp">
+
+            <TextView
+                android:id="@+id/user_PhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="Phone Number"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/right_arrow_phone"
+                android:layout_width="29dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="44dp"
+                android:layout_toEndOf="@id/user_PhoneNumber"
+                android:src="@drawable/ic_arrow_forward" />
+
+            <TextView
+                android:id="@+id/userPhoneNumberTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="58dp"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+<!--
+
+<com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Dark_Grey"
+        android:paddingEnd="25dp"
+        android:theme="@style/Theme.MargaritaHouseCleaning.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_profile_test"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/Dark_Grey"
+            android:theme="@style/myCustomMenuTextAppearance"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:popupTheme="@style/Theme.MargaritaHouseCleaning.PopupOverlay"
+            app:theme="@style/ToolbarTheme"
+            app:title="Edit full name" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+-->

@@ -34,7 +34,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
         getSupportActionBar().hide();
-        getWindow().setStatusBarColor(ContextCompat.getColor(ForgotPasswordActivity.this, R.color.redStatusBarColor));
+        getWindow().setStatusBarColor(ContextCompat.getColor(ForgotPasswordActivity.this, R.color.Dark_Grey));
 
         emailEditText = (EditText) findViewById(R.id.resetEmailText);
         resetPassword = (Button) findViewById(R.id.ResetPasswordBtn);

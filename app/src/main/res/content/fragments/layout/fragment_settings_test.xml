@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Dark_Grey"
+    android:orientation="vertical"
+    android:id="@+id/settingsContainer"
+    tools:context=".ui.profile.ProfileFragmentTest">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="@drawable/bottom_nav_icon_color"
+        android:background="@drawable/red_bottom_nav_corner"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Toolbar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.appbar.AppBarLayout
+                        android:id="@+id/appBarLayout_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/Dark_Grey"
+                        android:theme="@style/Theme.MargaritaHouseCleaning.AppBarOverlay"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar_profile_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="69dp"
+                            android:background="@color/Dark_Grey"
+                            android:paddingStart="152dp"
+                            android:theme="@style/myCustomMenuTextAppearance"
+                            app:popupTheme="@style/Theme.MargaritaHouseCleaning.PopupOverlay"
+                            app:theme="@style/ToolbarTheme"
+                            app:title="Settings"
+                            app:titleTextAppearance="@style/textToolBarSize" />
+
+                    </com.google.android.material.appbar.AppBarLayout>
+
+                </LinearLayout>
+
+                <!-- User Profile -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="135dp"
+                        android:layout_height="135dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="24dp"
+                        android:src="@drawable/default_profile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/guideline11" />
+
+                    <ImageButton
+                        android:id="@+id/fab_add"
+                        android:layout_width="26dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="bottom|right"
+                        android:layout_marginStart="93dp"
+                        android:layout_marginTop="108dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/ripple_oval"
+                        android:elevation="8dp"
+                        android:src="@drawable/ic_add"
+                        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+                        app:layout_constraintEnd_toEndOf="@+id/profile_image"
+                        app:layout_constraintStart_toStartOf="@+id/profile_image"
+                        app:layout_constraintTop_toTopOf="@+id/profile_image" />
+
+                    <TextView
+                        android:id="@+id/userNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+                    <Button
+                        android:id="@+id/editProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/button_rounded"
+                        android:gravity="center"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="30dp"
+                        android:text="Edit Profile"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:theme="@style/AppBottomSheetDialogTheme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/userNameText" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.06" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- App features -->
+                <TextView
+                    android:id="@+id/AppFeatures"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_toEndOf="@+id/accountInfo"
+                    android:text="App"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/AppFeatures_Section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/background_settings"
+                    android:orientation="vertical"
+                    android:paddingStart="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingBottom="25dp">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/round_about_us" />
+
+                        <ImageView
+                            android:id="@+id/infoIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/ic_info" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/infoIcon"
+                            android:text="About us"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/aboutArrow"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/ic_arrow_forward"
+                            android:paddingStart="25dp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/round_location" />
+
+                        <ImageView
+                            android:id="@+id/locationIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/ic_location" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/locationIcon"
+                            android:text="Office Location"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/officeArrow"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/ic_arrow_forward"
+                            android:paddingStart="25dp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/round_services" />
+
+                        <ImageView
+                            android:id="@+id/servicesIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/ic_cleaning_services" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/servicesIcon"
+                            android:text="Cleaning Services"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/cleaningArrow"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/ic_arrow_forward"
+                            android:paddingStart="25dp" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <!-- User Account -->
+                <TextView
+                    android:id="@+id/accountText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@+id/accountInfo"
+                    android:text="Account"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/accountInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/background_settings"
+                    android:orientation="vertical"
+                    android:paddingStart="25dp"
+                    android:paddingTop="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingBottom="25dp">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/round_account" />
+
+                        <ImageView
+                            android:id="@+id/EmailIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/ic_email" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/EmailIcon"
+                            android:text="Change Email"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/emailArrow"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/ic_arrow_forward"
+                            android:paddingStart="25dp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/round_account" />
+
+                        <ImageView
+                            android:id="@+id/LockIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/ic_lock" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/LockIcon"
+                            android:text="Change Password"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/passwordArrow"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/ic_arrow_forward"
+                            android:paddingStart="25dp" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <!-- Notification -->
+                <TextView
+                    android:id="@+id/notificationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@+id/accountInfo"
+                    android:text="Notification"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/background_settings"
+                    android:orientation="vertical"
+                    android:paddingStart="25dp"
+                    android:paddingTop="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingBottom="25dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/round_notification" />
+
+                        <ImageView
+                            android:id="@+id/NotificationIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/ic_baseline_notifications_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/NotificationIcon"
+                            android:text="Notifications"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/notificationSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:theme="@style/notificationSwitch"
+                            app:switchMinWidth="50dp" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <!-- Logout -->
+                <TextView
+                    android:id="@+id/logoutText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@+id/accountInfo"
+                    android:text="Logout"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/Logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/background_settings"
+                    android:orientation="vertical"
+                    android:paddingStart="25dp"
+                    android:paddingTop="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingBottom="25dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/round_logout" />
+
+                        <ImageView
+                            android:id="@+id/LogoutIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/ic_logout" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/LogoutIcon"
+                            android:text="Logout"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/logoutArrow"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/ic_arrow_forward"
+                            android:paddingStart="25dp" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="115dp"
+                    android:background="@drawable/line_shape"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</RelativeLayout>
+
+
+<!--
+Notification turn on
+<RelativeLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+<ImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:background="@drawable/round_notification"/>
+<ImageView
+    android:id="@+id/notificationIcon"
+    android:background="@drawable/ic_notification_small"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_width="30dp"
+    android:layout_height="30dp"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_marginStart="20dp"
+    android:layout_toEndOf="@+id/notificationIcon"
+    android:text="Notification"
+    android:textColor="@color/white"
+    android:textSize="16sp"
+    android:textStyle="bold" />
+
+<androidx.appcompat.widget.SwitchCompat
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_centerVertical="true"
+    android:switchMinWidth="50dp"
+    android:theme="@style/notificationSwitch" />
+
+
+
+</RelativeLayout>
+-->

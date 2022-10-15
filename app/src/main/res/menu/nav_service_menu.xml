@@ -4,7 +4,6 @@
         android:icon="@drawable/ic_more_vert"
         app:showAsAction="always">
         <menu>
-
             <item
                 android:id="@+id/action_hc"
                 android:orderInCategory="1"
@@ -22,3 +21,4 @@
         </menu>
     </item>
 </menu>
+

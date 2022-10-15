@@ -6,26 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingEnd="15dp"
-        android:paddingStart="15dp"
         android:background="@color/Dark_Grey"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
         android:theme="@style/Theme.MargaritaHouseCleaning.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_main"
             android:layout_width="match_parent"
-            app:theme="@style/ToolbarTheme"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/Dark_Grey"
-            app:popupTheme="@style/Theme.MargaritaHouseCleaning.PopupOverlay" />
+            app:navigationIcon="@drawable/ic_menu"
+            app:popupTheme="@style/Theme.MargaritaHouseCleaning.PopupOverlay"
+            app:theme="@style/ToolbarTheme" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

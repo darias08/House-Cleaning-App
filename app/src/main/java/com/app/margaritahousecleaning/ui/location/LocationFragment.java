@@ -1,57 +1,54 @@
 package com.app.margaritahousecleaning.ui.location;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
+import androidx.viewpager.widget.ViewPager;
 
 import com.app.margaritahousecleaning.MainActivity;
 import com.app.margaritahousecleaning.R;
+import com.app.margaritahousecleaning.SettingsFragmentTest;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 
 public class LocationFragment extends Fragment {
 
-
-    private BottomNavigationItemView bottomNavigationItemView;
+    private Toolbar toolbar;
+    private ViewPager view_pager;
+    private ImageView arrowBack;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_location, container, false);
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Office Location");
 
-        //Navigating to home fragment
-        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(R.id.homeFragment);
-        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_nav_location_action_to_nav_home);
-            }
-        });
-
-        //Navigating to schedule fragment.
-        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(R.id.scheduleFragment);
-        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
+        toolbar = v.findViewById(R.id.toolbar_location);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_scheduleUserFragment1);
+                Navigation.findNavController(v).navigate(R.id.action_locationFragment_to_settingsFragment);
             }
         });
 
-        //Lock navigation drawer
-        ((MainActivity)getActivity()).setDrawer_Locked();
 
         return v;
     }
@@ -68,6 +65,7 @@ public class LocationFragment extends Fragment {
         }
     };
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -78,17 +76,13 @@ public class LocationFragment extends Fragment {
             mapFragment.getMapAsync(callback);
         }
     }
+    
 
     @Override
-    public void onResume() {
-        super.onResume();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setHomeButtonEnabled(false);
-    }
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu,inflater);
+        inflater.inflate(R.menu.nav_service_menu, menu);
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+
     }
 }

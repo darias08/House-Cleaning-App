@@ -13,31 +13,64 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordFieldRegister"
-        android:layout_width="318dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="12dp"
-        app:boxBackgroundMode="none"
-        app:hintEnabled="false"
+        android:id="@+id/emailFieldLogin1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="Email Address"
+        android:textColorHint="#80FFFFFF"
+        app:boxStrokeColor="@color/white"
+        app:boxStrokeErrorColor="#FF000C"
+        app:boxStrokeWidth="2dp"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
+        app:errorTextColor="#DC000A"
+        app:hintTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_emailLogin"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8">
+
+        <EditText
+            android:id="@+id/edit_text_emailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/custom_email_icon"
+            android:drawablePadding="15dp"
+            android:inputType="textPostalAddress"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordFieldLogin"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textColorHint="#80FFFFFF"
+        app:boxStrokeColor="@color/white"
+        app:boxStrokeErrorColor="#FF000C"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
+        app:errorTextColor="#DC000A"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailFieldLogin1"
         app:passwordToggleDrawable="@drawable/show_password_selector"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/white">
 
         <EditText
-            android:id="@+id/edit_text_passwordLogin"
-            android:layout_width="318dp"
-            android:layout_height="47dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/custom_input"
+            android:id="@+id/edit_text_passwordRegister"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:drawableStart="@drawable/custom_lock_icon"
-            android:drawablePadding="10dp"
-            android:hint="Password"
+            android:drawablePadding="20dp"
             android:inputType="textPassword"
-            android:padding="2dp"
-            android:paddingBottom="20dp"
             android:textColor="@color/white"
             android:textColorHint="#80FFFFFF"
             android:textCursorDrawable="@drawable/cursor_color"
@@ -93,26 +126,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <EditText
-        android:id="@+id/edit_text_emailLogin"
-        android:layout_width="318dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="56dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/custom_email__icon"
-        android:drawablePadding="10dp"
-        android:hint="Email Address"
-        android:inputType="textEmailAddress"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:scaleType="centerCrop"
-        android:textColor="@color/white"
-        android:textColorHint="#80FFFFFF"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
     <Button
         android:id="@+id/signin"
         android:layout_width="318dp"
@@ -120,6 +133,7 @@
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/redStatusBarColor"
         android:text="Sign in"
+        android:onClick="signInInput"
         android:textAllCaps="false"
         android:textColor="#FFFFFFFF"
         android:textSize="16sp"
@@ -132,20 +146,20 @@
         android:id="@+id/forgotPasswordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="Forgot Password?"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordFieldRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordFieldLogin" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="53dp"
         android:layout_height="47dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -168,7 +182,7 @@
         android:id="@+id/googleAccountBtn"
         android:layout_width="141dp"
         android:layout_height="37dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/google_background"
         android:drawableStart="@drawable/ic_google"
         android:paddingLeft="15dp"

@@ -1,18 +1,22 @@
 package com.app.margaritahousecleaning;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.Menu;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.internal.NavigationMenuItemView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
@@ -23,28 +27,42 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements MyDrawerController  {
+public class MainActivity extends AppCompatActivity implements MyDrawerController {
 
+    private DatabaseReference databaseReference;
+    private FirebaseUser user;
+    private FirebaseAuth mAuth;
+    private String userID;
     private AppBarConfiguration mAppBarConfiguration;
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private NavigationView navigationView;
     private NavigationBarView navigationBarView;
-    private ActionBar actionBar;
+    private Dialog dialogPopup;
     private NavigationMenuItemView navigationMenuItemView;
+    private AlertDialog alertDialog;
+    private Button submitBtn;
+    private int timer = 1000;
+    private static final int RC_SIGN_IN = 100;
 
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.redStatusBarColor));
+        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.Dark_Grey));
         setContentView(R.layout.activity_main);
-        toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Registered Users");
+
+
+        userID = user.getUid();
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
-        //Navigating through fragments within Navigaton Drawer.
+
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -55,8 +73,7 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
                         break;
                     }
                     case R.id.nav_services: {
-                        Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_content_main).navigate(R.id.action_nav_home_to_servicesFragment);
-                        break;
+
                     }
                     case R.id.nav_logout: {
                         FirebaseAuth.getInstance().signOut();
@@ -65,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
                         finish();
                         break;
                     }
+
                 }
 
 
@@ -75,15 +93,20 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
         });
 
 
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home)
                 .setOpenableLayout(drawerLayout)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+
+
     }
+
+
+
+
 
 
     @Override
@@ -93,7 +116,6 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
                 || super.onSupportNavigateUp();
     }
 
-    //User can't return back to login page.
     @Override
     public void onBackPressed() {
         moveTaskToBack(true);
@@ -101,14 +123,14 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
 
     @Override
     public void setDrawer_Locked() {
-        // ======= Code to lock drawer ============
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
     }
 
     @Override
     public void setDrawer_Unlocked() {
-        // ======= Code to unlock drawer ============
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
 
     }
+
+
 }

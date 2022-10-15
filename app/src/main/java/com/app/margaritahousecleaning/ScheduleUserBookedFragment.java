@@ -1,8 +1,5 @@
 package com.app.margaritahousecleaning;
 
-import static com.app.margaritahousecleaning.R.id.bottom_navigation;
-import static com.app.margaritahousecleaning.R.id.homeFragment;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,19 +35,7 @@ public class ScheduleUserBookedFragment extends Fragment {
 
 
 
-        //How to set bottom navigation Icon active.
-        bottomNavigationView = (BottomNavigationView) v.findViewById(bottom_navigation);
-        bottomNavigationView.getMenu().findItem(R.id.scheduleFragment).setChecked(true);
 
-
-        //How to click a icon and transition to the next screen.
-        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(homeFragment);
-        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               //Navigation.findNavController(view).navigate(R.id.action_scheduleUserBookedFragment_to_homeFragment);
-            }
-        });
 
         datePicked = v.findViewById(R.id.date3);
         datePicked.setOnClickListener(new View.OnClickListener() {

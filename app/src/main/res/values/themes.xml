@@ -9,9 +9,10 @@
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
     </style>
 
     <style name="Theme.AppCompat.Dialog" parent="Theme.AppCompat.Light.Dialog">
@@ -27,12 +28,7 @@
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
     </style>
 
-    <style name="AppBottomSheetDialogTheme1" parent="Theme.Design.Light.BottomSheetDialog">
-        <item name="colorPrimary">#FFFFFF</item>
-        <item name="colorControlActivated">@color/redStatusBarColor</item>
-        <item name="colorPrimaryVariant">@color/redStatusBarColor</item>
-        <item name="bottomSheetStyle">@style/AppModalStyle</item>
-    </style>
+
 
     <style name="ToolbarTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textColorPrimary">@color/purple_200</item>
@@ -40,22 +36,51 @@
         <item name="android:textColor">@color/_bg__register_ek2_color</item>
     </style>`
 
-
-    <!-- bottomSheetStyle-->
-    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/bottom_sheet_background</item>
-    </style>
-
     <style name="Theme.MargaritaHouseCleaning.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <style name="Theme.MargaritaHouseCleaning.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.MargaritaHouseCleaning.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <!-- MenuItem -->
+
+
+    <style name="notificationSwitch" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="colorControlActivated">@color/notification</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+    </style>
+
+
 
 
 </resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+       <style name="AppBottomSheetDialogTheme1" parent="Theme.Design.Light.BottomSheetDialog">
+           <item name="colorPrimary">#FFFFFF</item>
+           <item name="colorControlActivated">@color/redStatusBarColor</item>
+           <item name="colorPrimaryVariant">@color/redStatusBarColor</item>
+           <item name="bottomSheetStyle">@style/AppModalStyle</item>
+       </style>
+
+
+
+        ================bottomSheetStyle==========
+        <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_background</item>
+        </style>
+       -->

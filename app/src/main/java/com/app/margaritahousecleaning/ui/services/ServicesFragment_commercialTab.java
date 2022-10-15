@@ -11,20 +11,21 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import com.app.margaritahousecleaning.MainActivity;
+import com.app.margaritahousecleaning.MainHomeActivity;
 import com.app.margaritahousecleaning.R;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 
-public class ServicesFragment_commercialTab extends Fragment {
+public class ServicesFragment_commercialTab extends Fragment  {
 
     private ImageSlider imageSlider;
     private BottomNavigationItemView bottomNavigationItemView;
     private ImageView img1,img2, img3, img4, img5, img6, img7, img8;
+    private Toolbar toolbar;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -92,22 +93,15 @@ public class ServicesFragment_commercialTab extends Fragment {
             }
         });
 
-
-
-        //Setting Toolbar title
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Services");
-
-        bottomNavigationItemView = (BottomNavigationItemView) v.findViewById(R.id.homeFragment);
-        bottomNavigationItemView.setOnClickListener(new View.OnClickListener() {
+        toolbar = v.findViewById(R.id.toolbar_cleaning_services);
+        ((MainHomeActivity)getActivity()).setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_servicesFragment_commercialTab_to_nav_home);
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_servicesFragment_commercialTab2_to_settingsFragment);
             }
         });
 
-
-        //Lock navigation drawer
-        ((MainActivity)getActivity()).setDrawer_Locked();
 
         setHasOptionsMenu(true);
         return v;
@@ -175,36 +169,23 @@ public class ServicesFragment_commercialTab extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.nav_service_menu, menu);
         super.onCreateOptionsMenu(menu,inflater);
-
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_hc:
-                Navigation.findNavController(getView()).navigate(R.id.action_servicesFragment_commercialTab_to_servicesFragment);
-                break;
+                Navigation.findNavController(getView()).navigate(R.id.action_servicesFragment_commercialTab2_to_servicesFragment_residentialTab);
+            break;
+
             case R.id.action_mc:
-                Navigation.findNavController(getView()).navigate(R.id.action_servicesFragment_commercialTab_to_servicesFragment_miscTab);
-
-
+                Navigation.findNavController(getView()).navigate(R.id.action_servicesFragment_commercialTab2_to_servicesFragment_miscTab2);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setHomeButtonEnabled(false);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
-    }
-
-
 }
+
+
