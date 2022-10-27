@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Dark_Grey"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/locationInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="61dp"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4dp"
+            android:text="Would you like us to visit you at this address for an estimate?"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/AppFeatures_Section"
+        android:layout_width="390dp"
+        android:layout_height="225dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/background_address"
+        android:orientation="vertical"
+        android:paddingStart="25dp"
+        android:paddingRight="25dp"
+        android:paddingBottom="25dp">
+
+
+        <!--Street Address title -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Street Address: "
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/addressTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="2505 colony st"
+            android:textColor="#80FFFFFF"
+            android:textSize="15sp" />
+
+
+        <!--Underline for text -->
+        <View
+            android:id="@+id/underlineAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:background="#737373"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.777"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <!--Zip Code title -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zip Code: "
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/zipCodeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="98437"
+            android:textColor="#80FFFFFF"
+            android:textSize="15sp" />
+
+        <!--Underline for text -->
+        <View
+            android:id="@+id/underlineZipCode"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:background="#737373"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.777"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <!--Phone Number title -->
+
+        <!--Underline for text -->
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/UpdateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Address"
+        android:textAllCaps="false"
+        android:theme="@style/AppBottomSheetDialogTheme"
+        android:padding="12dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="30dp"/>
+
+
+</LinearLayout>
+

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Dark_Grey">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Dark_Grey"
+        android:paddingEnd="25dp"
+        android:theme="@style/Theme.MargaritaHouseCleaning.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_change_address"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/Dark_Grey"
+            android:theme="@style/myCustomMenuTextAppearance"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:popupTheme="@style/Theme.MargaritaHouseCleaning.PopupOverlay"
+            app:theme="@style/ToolbarTheme"
+            app:title="Change Address" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/StreetAddressET"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="Street Address"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/white"
+        app:boxStrokeErrorColor="#FF000C"
+        app:boxStrokeWidth="2dp"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
+        app:errorTextColor="#DC000A"
+        app:hintTextColor="@color/white"
+        android:textCursorDrawable="@drawable/cursor_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout_profile">
+
+        <EditText
+            android:id="@+id/userStreetAddressET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@drawable/cursor_color" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ZipCodeFrameET"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Zip Code"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/white"
+        app:boxStrokeErrorColor="#FF000C"
+        app:boxStrokeWidth="2dp"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
+        app:errorTextColor="#DC000A"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StreetAddressET">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/UserZipCodeET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:maxLength="5"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

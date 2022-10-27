@@ -9,7 +9,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".LoginUserActivity">
+    tools:context=".Activities.LoginUserActivity">
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -146,10 +146,10 @@
         android:id="@+id/forgotPasswordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="Forgot Password?"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/redStatusBarColor"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordFieldLogin" />
@@ -182,7 +182,7 @@
         android:id="@+id/googleAccountBtn"
         android:layout_width="141dp"
         android:layout_height="37dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/google_background"
         android:drawableStart="@drawable/ic_google"
         android:paddingLeft="15dp"
@@ -190,8 +190,9 @@
         android:textAllCaps="false"
         android:textColor="#BF373737"
         android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

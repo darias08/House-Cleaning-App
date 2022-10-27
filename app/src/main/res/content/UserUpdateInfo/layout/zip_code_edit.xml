@@ -54,6 +54,8 @@
             android:textColor="@color/white"
             android:maxLength="5"
             android:inputType="number"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+            android:textCursorDrawable="@drawable/cursor_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>

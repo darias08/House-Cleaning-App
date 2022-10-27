@@ -16,15 +16,17 @@
     <color name="DarkBackground">#121212</color>
     <color name="_bg__register_ek2_color">#1B1919</color>
     <color name="greyTransparent">#80FF0000</color>
-    <color name="transparentBackground">#00000000</color>
+    <color name="transparentBackground">#59FFFFFF</color>
     <color name="line_195_color">#C1C1C1</color>
     <color name="rectangle_11_color">#6E6E6E</color>
     <color name="login_color">#FF0000</color>
-
-
+    <color name="transparentWhite2">#80FFFFFF</color>
+    <color name="green">#42FA00</color>
     <color name="Dark_Grey">#070707</color>
-    <color name="mid_gray">#3A4856</color>
-    <color name="Shadow_gray">#1E1F20</color>
+    <color name="gray_color">#343434</color>
+    <color name="Shadow_gray">#2F3031</color>
+    <color name="Darker_Gray">#151515</color>
+    <color name="Light_Gray">#1B1B1B</color>
     <color name="dialog">#7E1E1F20</color>
 
     <color name="light_gray">#D2959595</color>
@@ -39,6 +41,10 @@
 
 
 
+    <!--This is for edit text -->
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#80757575</color>
+
+
+
 
 </resources>

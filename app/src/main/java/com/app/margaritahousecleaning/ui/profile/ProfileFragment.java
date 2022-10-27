@@ -4,26 +4,21 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
-import com.app.margaritahousecleaning.MainHomeActivity;
 import com.app.margaritahousecleaning.R;
-import com.app.margaritahousecleaning.ScheduleUserFragment;
-import com.app.margaritahousecleaning.SettingsFragmentTest;
-import com.app.margaritahousecleaning.UserGoogleAccount;
 import com.app.margaritahousecleaning.UserProfile;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +26,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ProfileFragment extends Fragment {
 
@@ -40,6 +38,9 @@ public class ProfileFragment extends Fragment {
     private DatabaseReference databaseReference;
     private String userID;
     private FirebaseUser user;
+    private FirebaseFirestore fStore;
+    private FirebaseAuth fAuth;
+    private DocumentReference documentReference;
     ImageView  right_arrow_editName, right_arrow_editAddress, right_arrow_editZipCode, right_arrow_editPhoneNumber;
 
     @Override
@@ -54,20 +55,19 @@ public class ProfileFragment extends Fragment {
         userZipCode = v.findViewById(R.id.userZipCodeTxt);
         userPhoneNumber = v.findViewById(R.id.userPhoneNumberTxt);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Registered Users");
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        userID = user.getUid();
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
+        documentReference = fStore.collection("Users").document(userID);
 
-        databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-               UserProfile userProfile = snapshot.getValue(UserProfile.class);
-
-                if (userProfile != null) {
-                    String fullName = userProfile.fullName;
-                    String streetAddress = userProfile.streetAddress;
-                    String zipCode = userProfile.zipCode;
-                    String phoneNumber = userProfile.phoneNumber;
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    String fullName = documentSnapshot.getString("fullName");
+                    String streetAddress = documentSnapshot.getString("streetAddress");
+                    String zipCode = documentSnapshot.getString("zipCode");
+                    String phoneNumber = documentSnapshot.getString("phoneNumber");
 
 
                     userFullName.setText(fullName);
@@ -75,12 +75,14 @@ public class ProfileFragment extends Fragment {
                     userZipCode.setText(zipCode);
                     userPhoneNumber.setText(phoneNumber);
 
+                }else {
+                    Toast.makeText(getActivity(), "Document doesn't exist", Toast.LENGTH_SHORT).show();
                 }
             }
-
+        }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "Document doesn't exist.", Toast.LENGTH_SHORT).show();
             }
         });
 

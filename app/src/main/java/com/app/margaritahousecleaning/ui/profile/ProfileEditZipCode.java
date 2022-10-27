@@ -23,6 +23,7 @@ import com.app.margaritahousecleaning.R;
 import com.app.margaritahousecleaning.UserProfile;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,16 +33,19 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class ProfileEditZipCode extends Fragment {
 
-    private Toolbar toolbar;
-    private EditText userZipCode;
-    private DatabaseReference databaseReference;
-    private FirebaseUser user;
     private String userID;
+    private FirebaseFirestore fStore;
+    private FirebaseAuth fAuth;
+    private DocumentReference documentReference;
     private TextInputLayout EditTextZipCode;
 
 
@@ -55,9 +59,10 @@ public class ProfileEditZipCode extends Fragment {
         EditTextZipCode = v.findViewById(R.id.EditTextZipCodeFrame);
 
         //Firebase
-        databaseReference = FirebaseDatabase.getInstance().getReference("Registered Users");
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        userID = user.getUid();
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
+        documentReference = fStore.collection("Users").document(userID);
 
 
         Toolbar toolbar = (Toolbar) v.findViewById(R.id.toolbar_profile_et);
@@ -70,21 +75,21 @@ public class ProfileEditZipCode extends Fragment {
         });
 
 
-        databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                UserProfile userProfile = snapshot.getValue(UserProfile.class);
-
-                if (userProfile != null) {
-                    String zipCode = userProfile.zipCode;
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    String zipCode = documentSnapshot.getString("zipCode");
                     EditTextZipCode.getEditText().setText(zipCode);
+
+                }else {
+                    Toast.makeText(getActivity(), "Document doesn't exist", Toast.LENGTH_SHORT).show();
                 }
-
             }
-
+        }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "Document doesn't exist.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -131,17 +136,21 @@ public class ProfileEditZipCode extends Fragment {
         if (!validatingZipCode()) {
             return;
         }
-            String ZipCode = EditTextZipCode.getEditText().getText().toString();
+        String zipCode = EditTextZipCode.getEditText().getText().toString();
 
-            EditTextZipCode.getEditText().setText(ZipCode);
-            HashMap hashMap = new HashMap();
-            hashMap.put("zipCode", ZipCode);
+        Map<String, Object> hashMap = new HashMap<>();
 
-            databaseReference.child(userID).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
-                @Override
-                public void onSuccess(Object o) {
-                    Toast.makeText(getActivity(), "Your profile has been updated!", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+        hashMap.put("zipCode", zipCode);
+        documentReference.update(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(getActivity(), "Your profile has been updated!", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

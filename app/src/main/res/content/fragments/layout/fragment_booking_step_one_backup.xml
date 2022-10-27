@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Dark_Grey"
+    android:orientation="vertical"
+    android:paddingStart="-5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Select your appointment"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:text="RadioButton"
+        android:layout_marginStart="20dp"/>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="340dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="20dp"
+        android:background="@color/gray"/>
+
+    <GridView
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

@@ -6,26 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Dark_Grey"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainHomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingEnd="15dp"
+    android:paddingStart="15dp"
+    android:background="@color/Dark_Grey"
+    android:theme="@style/Theme.MargaritaHouseCleaning.AppBarOverlay">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_cleaning_services"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingEnd="15dp"
-        android:paddingStart="15dp"
-        android:background="@color/Dark_Grey"
-        android:theme="@style/Theme.MargaritaHouseCleaning.AppBarOverlay">
+        android:layout_height="?attr/actionBarSize"
+        app:theme="@style/ToolbarTheme"
+        app:title="Services"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:popupTheme="@style/Theme.MargaritaHouseCleaning.PopupOverlay" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_cleaning_services"
-            android:layout_width="match_parent"
-            app:theme="@style/ToolbarTheme"
-            app:title="Services"
-            app:navigationIcon="@drawable/ic_arrow_back"
-            android:layout_height="?attr/actionBarSize"
-            app:popupTheme="@style/Theme.MargaritaHouseCleaning.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+</com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"

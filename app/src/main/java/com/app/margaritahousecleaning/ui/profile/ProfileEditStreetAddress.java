@@ -18,6 +18,7 @@ import androidx.navigation.Navigation;
 
 import com.app.margaritahousecleaning.R;
 import com.app.margaritahousecleaning.UserProfile;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,16 +28,19 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class ProfileEditStreetAddress extends Fragment {
 
-    private Toolbar toolbar;
-    private EditText userStreetAddressET;
-    private DatabaseReference databaseReference;
-    private FirebaseUser user;
     private String userID;
+    private FirebaseFirestore fStore;
+    private FirebaseAuth fAuth;
+    private DocumentReference documentReference;
     private TextInputLayout addressInput;
 
 
@@ -50,9 +54,10 @@ public class ProfileEditStreetAddress extends Fragment {
         addressInput = v.findViewById(R.id.EditTextStreetAddressFrame);
 
         //Firebase
-        databaseReference = FirebaseDatabase.getInstance().getReference("Registered Users");
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        userID = user.getUid();
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
+        documentReference = fStore.collection("Users").document(userID);
 
         Toolbar toolbar = (Toolbar) v.findViewById(R.id.toolbar_profile_et);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
@@ -63,22 +68,21 @@ public class ProfileEditStreetAddress extends Fragment {
             }
         });
 
-
-        databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                UserProfile userProfile = snapshot.getValue(UserProfile.class);
-
-                if (userProfile != null) {
-                    String streetAddress = userProfile.streetAddress;
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    String streetAddress = documentSnapshot.getString("streetAddress");
                     addressInput.getEditText().setText(streetAddress);
+
+                }else {
+                    Toast.makeText(getActivity(), "Document doesn't exist", Toast.LENGTH_SHORT).show();
                 }
-
             }
-
+        }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "Document doesn't exist.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -121,15 +125,23 @@ public class ProfileEditStreetAddress extends Fragment {
             return;
         }
 
-        String streetAddress = addressInput.getEditText().getText().toString();
-        addressInput.getEditText().setText(streetAddress);
 
-        HashMap hashMap = new HashMap();
-        hashMap.put("phoneNumber", streetAddress);
-        databaseReference.child(userID).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+        String streetAddress = addressInput.getEditText().getText().toString();
+
+        Map<String, Object> hashMap = new HashMap<>();
+
+        hashMap.put("streetAddress", streetAddress);
+        documentReference.update(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
-            public void onSuccess(Object o) {
+            public void onSuccess(Void unused) {
+
                 Toast.makeText(getActivity(), "Your profile has been updated!", Toast.LENGTH_SHORT).show();
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -12,13 +12,10 @@
         <item name="android:textColor">@color/gray</item>
         <item name="android:textSize">5sp</item></style>
 
-    <style name="MyEditText" parent="Theme.AppCompat.Light">
-        <item name="colorControlNormal">@color/redStatusBarColor</item>
-        <item name="colorControlActivated">@color/redStatusBarColor</item>
-    </style>
+
 
     <style name="textToolBarSize" parent="@style/Base.TextAppearance.AppCompat.Title">
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -40,6 +37,16 @@
         -->
     </style>
 
+    <!-- TextInputEdit bubble color -->
+    <style name="ThemeOverlay.AppTheme.TextInputEditText.Outlined" parent="">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/redStatusBarColor</item>
+        <item name="colorControlActivated">@color/redStatusBarColor</item>
+    </style>
 
 
     <style name="MyRounded.MaterialComponents.MaterialAlertDialog" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
@@ -101,6 +108,13 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Custom" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">Updating…</item>
+        <item name="DialogSpotColor">@android:color/holo_orange_dark</item>
+        <item name="DialogSpotCount">4</item>
     </style>
 
 

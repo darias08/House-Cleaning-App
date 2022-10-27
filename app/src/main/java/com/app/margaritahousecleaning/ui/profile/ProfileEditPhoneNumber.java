@@ -24,6 +24,7 @@ import com.app.margaritahousecleaning.R;
 import com.app.margaritahousecleaning.UserProfile;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,19 +34,21 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class ProfileEditPhoneNumber extends Fragment {
 
-    private Toolbar toolbar;
-    private EditText userPhoneNumberET;
-    private DatabaseReference databaseReference;
-    private FirebaseUser user;
+
     private String userID;
+    private FirebaseFirestore fStore;
+    private FirebaseAuth fAuth;
+    private DocumentReference documentReference;
     private TextInputLayout phoneNumberInput;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,11 +57,13 @@ public class ProfileEditPhoneNumber extends Fragment {
         View v = inflater.inflate(R.layout.phone_number_edit, container, false);
 
         phoneNumberInput = v.findViewById(R.id.EditTextPhoneNumberFrame);
+        phoneNumberInput.getEditText().addTextChangedListener(new PhoneNumberFormattingTextWatcher());
 
         //Firebase
-        databaseReference = FirebaseDatabase.getInstance().getReference("Registered Users");
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        userID = user.getUid();
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
+        documentReference = fStore.collection("Users").document(userID);
 
 
         Toolbar toolbar = (Toolbar) v.findViewById(R.id.toolbar_profile_et);
@@ -70,24 +75,26 @@ public class ProfileEditPhoneNumber extends Fragment {
             }
         });
 
-        databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                UserProfile userProfile = snapshot.getValue(UserProfile.class);
-
-                if (userProfile != null) {
-                    String phoneNumber = userProfile.phoneNumber;
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    String phoneNumber = documentSnapshot.getString("phoneNumber");
                     phoneNumberInput.getEditText().setText(phoneNumber);
+
+                }else {
+                    Toast.makeText(getActivity(), "Document doesn't exist", Toast.LENGTH_SHORT).show();
                 }
-
             }
-
+        }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "Document doesn't exist.", Toast.LENGTH_SHORT).show();
             }
         });
-        phoneNumberInput.getEditText().addTextChangedListener(new PhoneNumberFormattingTextWatcher());
+
+
+
 
 
         setHasOptionsMenu(true);
@@ -134,14 +141,21 @@ public class ProfileEditPhoneNumber extends Fragment {
         }
 
         String phoneNumber = phoneNumberInput.getEditText().getText().toString();
-        phoneNumberInput.getEditText().setText(phoneNumber);
 
-        HashMap hashMap = new HashMap();
+        Map<String, Object> hashMap = new HashMap<>();
+
         hashMap.put("phoneNumber", phoneNumber);
-        databaseReference.child(userID).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+        documentReference.update(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
-            public void onSuccess(Object o) {
+            public void onSuccess(Void unused) {
+
                 Toast.makeText(getActivity(), "Your profile has been updated!", Toast.LENGTH_SHORT).show();
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

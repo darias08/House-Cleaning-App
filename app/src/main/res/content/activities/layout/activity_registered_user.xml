@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/Dark_Grey"
     android:fillViewport="true"
-    tools:context=".RegisteredUserActivity">
+    tools:context=".Activities.RegisteredUserActivity">
 
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -244,30 +244,26 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_percent="0.92" />
-
-                <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintGuide_percent="0.11" />
 
+
                 <TextView
                     android:id="@+id/LoginText"
                     android:layout_width="44dp"
                     android:layout_height="20dp"
                     android:layout_marginTop="32dp"
-                    android:layout_marginEnd="96dp"
+                    android:layout_marginEnd="104dp"
                     android:text="Login"
                     android:textColor="#B80E16"
                     android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button_register1" />
+                    app:layout_constraintTop_toBottomOf="@+id/button_register1"
+                    app:layout_constraintVertical_bias="0.161" />
 
                 <TextView
                     android:id="@+id/NoAccount"
@@ -278,17 +274,21 @@
                     android:text="Already have an account?"
                     android:textColor="#BFFFFFFF"
                     android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/LoginText"
+                    app:layout_constraintHorizontal_bias="0.539"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button_register1" />
-
+                    app:layout_constraintTop_toBottomOf="@+id/button_register1"
+                    app:layout_constraintVertical_bias="0.169" />
 
                 <Button
                     android:id="@+id/button_register1"
                     android:layout_width="200dp"
-                    android:layout_height="60dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="20dp"
                     android:onClick="registerInput"
                     android:text="Register"
+                    android:textAllCaps="false"
                     android:textSize="16sp"
                     android:theme="@style/AppBottomSheetDialogTheme"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -301,13 +301,11 @@
                     style="?android:attr/progressBarStyle"
                     android:layout_width="38dp"
                     android:layout_height="39dp"
-                    android:layout_marginBottom="16dp"
                     android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/NoAccount"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guideline6" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

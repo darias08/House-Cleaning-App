@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Dark_Grey"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spinner"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="35dp"
+            android:textColor="#F2FFFFFF"
+            app:ms_arrow_tint="@color/white"
+            app:ms_background_selector="@color/Light_Gray" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_appointment"
+            android:onClick="profileClicked"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"/>
+
+</LinearLayout>

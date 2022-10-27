@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.app.margaritahousecleaning.ui.home.HomeFragment"
+        android:name="com.app.margaritahousecleaning.Fragments.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
@@ -15,31 +15,41 @@
             app:destination="@id/scheduleUserFragment2" />
         <action
             android:id="@+id/action_homeFragment_to_notificationUpcomingFragment"
-            app:destination="@id/notificationUpcomingFragment" />
+            app:destination="@id/notificationFragment" />
         <action
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/scheduleUserFragment2"
-        android:name="com.app.margaritahousecleaning.ScheduleUserFragment"
+        android:name="com.app.margaritahousecleaning.Fragments.BookAppointmentFragment"
         android:label="ScheduleUserFragment"
-        tools:layout="@layout/fragment_schedule_user">
+        tools:layout="@layout/fragment_book_appointment">
         <action
             android:id="@+id/action_scheduleUserFragment2_to_homeFragment"
             app:destination="@id/homeFragment" />
         <action
             android:id="@+id/action_scheduleUserFragment2_to_notificationUpcomingFragment"
-            app:destination="@id/notificationUpcomingFragment" />
+            app:destination="@id/notificationFragment" />
         <action
             android:id="@+id/action_scheduleUserFragment2_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_scheduleUserFragment2_to_changeAddressFragment"
+            app:destination="@id/changeAddressFragment"
+            app:enterAnim="@anim/slide_in_bottom1"
+            app:exitAnim="@anim/slide_out_top1" />
+        <action
+            android:id="@+id/action_scheduleUserFragment2_to_notificationFragment"
+            app:destination="@id/notificationFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
     </fragment>
     <fragment
-        android:id="@+id/notificationUpcomingFragment"
-        android:name="com.app.margaritahousecleaning.NotificationUpcomingFragment"
+        android:id="@+id/notificationFragment"
+        android:name="com.app.margaritahousecleaning.Fragments.Notification"
         android:label="NotificationUpcomingFragment"
-        tools:layout="@layout/fragment_notification_upcoming" >
+        tools:layout="@layout/fragment_notification" >
         <action
             android:id="@+id/action_notificationUpcomingFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -52,9 +62,9 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.app.margaritahousecleaning.SettingsFragmentTest"
+        android:name="com.app.margaritahousecleaning.Fragments.SettingsFragment"
         android:label="SettingsFragment"
-        tools:layout="@layout/fragment_settings_test">
+        tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settingsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -63,7 +73,7 @@
             app:destination="@id/scheduleUserFragment2" />
         <action
             android:id="@+id/action_settingsFragment_to_notificationUpcomingFragment"
-            app:destination="@id/notificationUpcomingFragment" />
+            app:destination="@id/notificationFragment" />
         <action
             android:id="@+id/action_settingsFragment_to_servicesFragment_residentialTab"
             app:destination="@id/servicesFragment_residentialTab"
@@ -84,6 +94,16 @@
             app:destination="@id/profileFragment"
             app:enterAnim="@anim/slide_in_bottom1"
             app:exitAnim="@anim/slide_out_top1" />
+        <action
+            android:id="@+id/action_settingsFragment_to_profileUpdateEmail"
+            app:destination="@id/profileUpdateEmail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_settingsFragment_to_profileUpdatePassword"
+            app:destination="@id/profileUpdatePassword"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/servicesFragment_residentialTab"
@@ -233,4 +253,31 @@
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
     </fragment>
+    <fragment
+        android:id="@+id/profileUpdateEmail"
+        android:name="com.app.margaritahousecleaning.ui.profile.ProfileUpdateEmail"
+        android:label="ProfileUpdateEmail"
+        tools:layout="@layout/update_email">
+        <action
+            android:id="@+id/action_profileUpdateEmail_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileUpdatePassword"
+        android:name="com.app.margaritahousecleaning.ui.profile.ProfileUpdatePassword"
+        android:label="ProfileUpdatePassword"
+        tools:layout="@layout/update_password">
+        <action
+            android:id="@+id/action_profileUpdatePassword_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeAddressFragment"
+        android:name="com.app.margaritahousecleaning.Fragments.ChangeAddressFragment"
+        android:label="ChangeAddressFragment"
+        tools:layout="@layout/street_address_edit"/>
 </navigation>

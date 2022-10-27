@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:id="@+id/frame"
+    android:background="@color/Dark_Grey"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_marginStart="25dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/SelectYourProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select your profile"
+            android:textStyle="bold"
+            android:textColor="#80FFFFFF"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            app:cardBackgroundColor="@color/Light_Gray"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingEnd="40dp">
+
+                <ImageView
+                    android:id="@+id/profileIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_account" />
+
+                <TextView
+                    android:id="@+id/txt_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Name"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/cleaningServiceTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card_appointment"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:gravity="fill_horizontal"
+        android:text="What kind of cleaning service do you need?"
+        android:textColor="#80FFFFFF"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+    <in.daemondhruv.customviewgroup.ConstraintRadioGroup
+        android:id="@+id/RadioGroup"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cleaningServiceTxt"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="12dp">
+
+        <RadioButton
+            android:id="@+id/residentialRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            android:text="Residential Cleaning"
+            android:textColor="@color/white"
+            android:buttonTint="@color/redStatusBarColor"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/apartmentRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:paddingStart="5dp"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            android:text="Apartment Cleaning"
+            android:textColor="@color/white"
+            android:buttonTint="@color/redStatusBarColor"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/residentialRB" />
+
+        <RadioButton
+            android:id="@+id/officeRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            android:text="Office Cleaning"
+            android:buttonTint="@color/redStatusBarColor"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.014"
+            app:layout_constraintStart_toEndOf="@+id/residentialRB" />
+
+        <RadioButton
+            android:id="@+id/constructionRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            android:text="Construction Cleaning"
+            android:buttonTint="@color/redStatusBarColor"
+            android:textColor="@drawable/radio_btn_enable_disable"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/apartmentRB"
+            app:layout_constraintTop_toBottomOf="@+id/officeRB" />
+
+    </in.daemondhruv.customviewgroup.ConstraintRadioGroup>
+
+
+</RelativeLayout>
+
+<!--
+android:layout_below="@+id/cleaningServiceTxt"
+ <TextView
+            android:id="@+id/txt_service_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:text="Service #1"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+<TextView
+            android:id="@+id/txt_service_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:text="All Rooms Clean"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:gravity="center_horizontal"/>
+
+-->
+
+<!--
+
+<RadioGroup
+            android:id="@+id/RadioGroup"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible">
+
+            <RadioButton
+                android:id="@+id/residentialRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:text="Residential Cleaning"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/apartmentRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:text="Apartment Cleaning"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+
+            <RadioButton
+                android:id="@+id/officeRB"
+                layout_
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:text="Office Cleaning"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/constructionRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:text="Construction Cleaning"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+
+        </RadioGroup>
+-->
+
+

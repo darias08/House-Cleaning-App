@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/Dark_Grey"
     android:id="@+id/profile_container"
-    tools:context=".ui.profile.ProfileFragmentTest">
+    tools:context=".ui.profile.ProfileFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbar_s"
@@ -45,14 +45,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="25dp">
+            android:paddingBottom="20dp">
 
             <TextView
                 android:id="@+id/user_FullName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:text="Full Name"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp" />
@@ -61,10 +61,12 @@
                 android:id="@+id/right_arrow_name"
                 android:layout_width="29dp"
                 android:layout_height="21dp"
-                android:layout_marginStart="185dp"
-                android:layout_marginTop="45dp"
-                android:layout_marginEnd="44dp"
-                android:layout_toEndOf="@id/user_FullName"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="161dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="13dp"
+                android:layout_toEndOf="@+id/user_FullName"
                 android:src="@drawable/ic_arrow_forward" />
 
             <TextView
@@ -72,9 +74,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="58dp"
+                android:layout_marginTop="45dp"
+                android:text="username"
                 android:textColor="#80FFFFFF"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
         </RelativeLayout>
 
@@ -92,14 +95,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="25dp">
+            android:paddingBottom="20dp">
 
             <TextView
                 android:id="@+id/user_Address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:text="Street Address"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp" />
@@ -108,10 +111,11 @@
                 android:id="@+id/right_arrow_address"
                 android:layout_width="29dp"
                 android:layout_height="21dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="45dp"
-                android:layout_marginEnd="44dp"
-                android:layout_toEndOf="@id/user_Address"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="166dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="36dp"
                 android:src="@drawable/ic_arrow_forward" />
 
             <TextView
@@ -119,9 +123,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="58dp"
+                android:layout_marginTop="45dp"
+                android:text="user address"
                 android:textColor="#80FFFFFF"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
         </RelativeLayout>
 
@@ -139,14 +144,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="25dp">
+            android:paddingBottom="20dp">
 
             <TextView
                 android:id="@+id/user_ZipCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:text="Zip Code"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp" />
@@ -155,10 +160,11 @@
                 android:id="@+id/right_arrow_zipcode"
                 android:layout_width="29dp"
                 android:layout_height="21dp"
-                android:layout_marginStart="185dp"
-                android:layout_marginTop="45dp"
-                android:layout_marginEnd="44dp"
-                android:layout_toEndOf="@id/user_ZipCode"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="183dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="37dp"
                 android:src="@drawable/ic_arrow_forward" />
 
             <TextView
@@ -166,9 +172,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="58dp"
+                android:layout_marginTop="45dp"
+                android:text="zip code"
                 android:textColor="#80FFFFFF"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
         </RelativeLayout>
 
@@ -186,14 +193,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="25dp">
+            android:paddingBottom="20dp">
 
             <TextView
                 android:id="@+id/user_PhoneNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:text="Phone Number"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp" />
@@ -202,10 +209,11 @@
                 android:id="@+id/right_arrow_phone"
                 android:layout_width="29dp"
                 android:layout_height="21dp"
-                android:layout_marginStart="140dp"
-                android:layout_marginTop="45dp"
-                android:layout_marginEnd="44dp"
-                android:layout_toEndOf="@id/user_PhoneNumber"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="138dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginEnd="40dp"
                 android:src="@drawable/ic_arrow_forward" />
 
             <TextView
@@ -213,9 +221,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="58dp"
+                android:layout_marginTop="45dp"
                 android:textColor="#80FFFFFF"
-                android:textSize="16sp" />
+                android:textSize="14sp"
+                android:text="user phone"/>
 
         </RelativeLayout>
 

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Dark_Grey"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:background="@drawable/backgroundcorners4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Confirmation Details"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#D9FFFFFF"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Booking Information"
+            android:textSize="16sp"
+            android:textColor="#A6FFFFFF"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="13dp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/ic_calendar_transparent_light"/>
+
+        <TextView
+            android:id="@+id/txt_booking_time_txt"
+            android:text="10:00 - 11:00 at 19/10/2022"
+            android:textSize="14sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="6dp"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/ic_location_on"/>
+
+            <TextView
+                android:id="@+id/txt_street_address"
+                android:text="1234 random street"
+                android:textSize="14sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txt_zip_code"
+                android:text="95736"
+                android:textSize="14sp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/ic_clean"/>
+
+            <TextView
+                android:id="@+id/txt_cleaning_service_type"
+                android:text="Service Clean"
+                android:textSize="14sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+        <!--Underline for text -->
+
+        <View
+            android:layout_marginTop="25dp"
+            android:id="@+id/underlinePhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="#737373"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.777"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Best way to contact you"
+                android:textSize="16sp"
+                android:textColor="#A6FFFFFF"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/txt_customer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customer Name"
+                android:textColor="@color/white"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_phone"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/txt_phone_number_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(555)-555-5555"
+                android:textColor="@color/white"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_email"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/txt_email_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="personEmail@outlook.com"
+                android:textColor="@color/white"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="171dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="120dp"
+            android:text="Confirm"
+            android:theme="@style/AppBottomSheetDialogTheme" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

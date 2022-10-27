@@ -56,6 +56,7 @@
             android:drawablePadding="15dp"
             android:maxLength="14"
             android:inputType="phone"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
             android:textColor="@color/white"
             android:textCursorDrawable="@drawable/cursor_color"
             android:textSize="14sp" />

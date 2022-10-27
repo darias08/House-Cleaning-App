@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bookApptContainer"
+    android:background="@color/Dark_Grey"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/Book_Appointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Dark_Grey"
+            android:theme="@style/Theme.MargaritaHouseCleaning.AppBarOverlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_book_appt"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
+                android:background="@color/Dark_Grey"
+                android:paddingStart="120dp"
+                android:theme="@style/myCustomMenuTextAppearance"
+                app:popupTheme="@style/Theme.MargaritaHouseCleaning.PopupOverlay"
+                app:theme="@style/ToolbarTheme"
+                app:title="Book Appointment"
+                app:titleTextAppearance="@style/textToolBarSize" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- step view -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="-20dp"
+            android:layout_marginEnd="20dp">
+
+
+           <com.shuhart.stepview.StepView
+               android:id="@+id/step_view1"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="16dp"
+               android:layout_marginStart="35dp"
+               app:sv_animationType="None"
+               app:sv_stepPadding="12dp"
+               app:sv_selectedCircleColor="@color/redStatusBarColor"
+               app:sv_selectedStepNumberColor="@color/white"
+               app:sv_selectedTextColor="@color/white"
+               app:sv_doneCircleColor="#32BF00"
+               app:sv_doneStepLineColor="#FFFFFF"
+               app:sv_doneStepMarkColor="@color/white"
+               app:sv_doneTextColor="@color/white"
+               app:sv_textSize="14sp"
+               app:sv_typeface="@font/robotomedium"/>
+        </LinearLayout>
+
+
+        <!--view pager -->
+        <LinearLayout
+            android:id="@+id/ViewPage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <com.app.margaritahousecleaning.common.NonSwipeViewPager
+                    android:id="@+id/view_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp" />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <!--Buttons-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/BottomNavigation"
+        android:layout_marginTop="570dp"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/back_btn"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/gray"
+                android:elevation="8dp"
+                android:enabled="false"
+                android:text="Back"
+                android:textAllCaps="false"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/next_btn"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/back_btn"
+                android:background="@color/gray"
+                android:elevation="8dp"
+                android:enabled="false"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <!-- bottom Navigation bar -->
+    <LinearLayout
+        android:id="@+id/BottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/red_bottom_nav_corner"
+            app:itemIconTint="@drawable/bottom_nav_icon_color"
+            app:itemTextColor="@color/white"
+            app:menu="@menu/bottom_menu" />
+    </LinearLayout>
+
+</RelativeLayout>

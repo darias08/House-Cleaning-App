@@ -18,6 +18,7 @@ import androidx.navigation.Navigation;
 
 import com.app.margaritahousecleaning.R;
 import com.app.margaritahousecleaning.UserProfile;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,18 +28,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class ProfileEditFullName extends Fragment {
 
-    private Toolbar toolbar;
-    private EditText userFullNameET;
-    private DatabaseReference databaseReference;
-    private FirebaseUser user;
     private String userID;
-    private TextInputLayout editName;
-
+    private FirebaseFirestore fStore;
+    private FirebaseAuth fAuth;
+    private DocumentReference documentReference;
+    TextInputLayout editName;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,10 +51,12 @@ public class ProfileEditFullName extends Fragment {
 
         editName = v.findViewById(R.id.EditTextFullNameFrame);
 
+
         //Firebase
-        databaseReference = FirebaseDatabase.getInstance().getReference("Registered Users");
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        userID = user.getUid();
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
+        documentReference = fStore.collection("Users").document(userID);
 
         Toolbar toolbar = (Toolbar) v.findViewById(R.id.toolbar_profile_et);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
@@ -62,24 +67,24 @@ public class ProfileEditFullName extends Fragment {
             }
         });
 
-
-        databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                UserProfile userProfile = snapshot.getValue(UserProfile.class);
-
-                if (userProfile != null) {
-                    String fullName = userProfile.fullName;
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    String fullName = documentSnapshot.getString("fullName");
                     editName.getEditText().setText(fullName);
+
+                }else {
+                    Toast.makeText(getActivity(), "Document doesn't exist", Toast.LENGTH_SHORT).show();
                 }
-
             }
-
+        }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "Document doesn't exist.", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         setHasOptionsMenu(true);
 
@@ -119,18 +124,23 @@ public class ProfileEditFullName extends Fragment {
         if (!validatingFullName()) {
             return;
         }
+        String fullName = editName.getEditText().getText().toString();
 
-            String fullName = editName.getEditText().getText().toString();
-            editName.getEditText().setText(fullName);
+        Map<String, Object> hashMap = new HashMap<>();
 
-            HashMap hashMap = new HashMap();
-            hashMap.put("fullName", fullName);
-            databaseReference.child(userID).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
-                @Override
-                public void onSuccess(Object o) {
-                    Toast.makeText(getActivity(), "Your profile has been updated!", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+        hashMap.put("fullName", fullName);
+        documentReference.update(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
 
+                Toast.makeText(getActivity(), "Your profile has been updated!", Toast.LENGTH_SHORT).show();
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+}

@@ -9,5 +9,11 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="address_bullet">\u2022 Address:</string>
+    <string name="time_bullet">\u2022 Time:</string>
+    <string name="customerName_bullet">\u2022 Your Name:</string>
+    <string name="customerPhone_bullet">\u2022 Your Phone Number:</string>
+    <string name="customerEmail_bullet">\u2022 Your Email:</string>
+
 
 </resources>

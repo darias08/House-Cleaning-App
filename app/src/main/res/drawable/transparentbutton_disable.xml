@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="true">
+        <shape
+            android:shape="rectangle">
+            <solid
+                android:color="@color/redStatusBarColor">
+            </solid>
+            <corners
+                android:radius="5dp">
+            </corners>
+            <padding
+                android:bottom="2dp" android:left="2dp"
+                android:right="2dp" android:top="2dp">
+            </padding>
+        </shape>
+    </item>
+    <item android:state_enabled="false" android:drawable="@color/gray"/>
+
+</selector>

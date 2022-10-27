@@ -15,7 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import com.app.margaritahousecleaning.MainHomeActivity;
+import com.app.margaritahousecleaning.Activities.MainHomeActivity;
 import com.app.margaritahousecleaning.R;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
