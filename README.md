@@ -1,4 +1,4 @@
-<h1>House Cleaning Mobile App (Business App)</h1>
+<h1>House Cleaning Mobile App (Commercial)</h1>
 
 <h2>Tools I have used</h2>
 
